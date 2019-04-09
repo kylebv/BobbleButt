@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PageHeader.aspx.cs" Inherits="BobbleButt.PageHeader" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PageHeader.master.cs" Inherits="BobbleButt.PageHeader" %>
+
+<%@ Import Namespace="BobbleButt" %>
 
 <!DOCTYPE html>
 <html>
@@ -13,7 +15,11 @@
     <script type=text/javascript src="Scripts/jquery-3.3.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script type="text/javascript">
-        function toggleCart() { try { jQuery("#CART").fadeToggle(); } catch (err) { alert(err.message); } }
+        function toggleCart() {
+            try {
+                jQuery("#CART").fadeToggle("fast", false);
+            } catch (err) { alert(err.message); }
+        }
     </script>
 </head>
     
@@ -28,7 +34,7 @@
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="Main.aspx">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Products</a>
@@ -45,67 +51,87 @@
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
     </div>
   </div>
-    <% if(Session["user"]==null){%>
-        <asp:imagebutton id="imb_user" class="img-icon fa fa-shopping-cart" runat="server" imageurl="img/user.png"
+    <% User user = (User)Session["user"];
+        if (user!=null){%>
+        <div class="dropdown">
+  <asp:imagebutton id="imb_user" class="img-icon fa fa-shopping-cart" runat="server" imageurl="img/user.png"
             onmouseover="src='img/user_hover.png';"
             onmouseout="src='img/user.png';"> 
         </asp:imagebutton>
-      
+  <div class="dropdown-content">
+      <a href="#">Edit Profile
+      </a>
+      <%if (user.IsAdmin)
+          { %>
+    <a href="#">Users</a>
+    <a href="#">Items</a>
+    <a href="#">Orders</a>
+      <a href="#">Postage Options</a>
+      <%}
+    else
+    { %>
+      <a href="#">Order History</a>
+      <%} %>
+      <a href="#">Sign Out</a>
+  </div>
+</div>
     <% } else {%>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Sign In / Register</a>
+                <a class="nav-link" href="Login_Register.aspx">Sign In / Register</a>
             </li>
         </ul>
 
     <%}%>
+    
     <asp:imagebutton id="imb_cart" class="img-icon" runat="server" imageurl="img/cart.png"
             onmouseover="src='img/cart_hover.png';"
             onmouseout="src='img/cart.png';" OnClientClick="toggleCart();return false;"> 
         </asp:imagebutton>
-    <% if (cart!= null)
-             {
-                 if (cart.Count > 0)
-                 {%>
-    <span class="badge"><%=cart.Count%></span>
-    <%}
-             } %>
-    <span class="badge">0</span>
+    <% int cartCount = 0;
+        if (cart != null)
+        {
+            cartCount = cart.Count;
+        }
+        %>
+    
+    <span class="badge"><%=cartCount %></span>
 
 </nav>
     <!--begin checkout menu-->
     <div class="container">
   <div id="CART" class="shopping-cart">
     <div class="shopping-cart-header">
-      <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+      <i class="fa fa-shopping-cart cart-icon"></i><span class="badge"><%=cartCount%></span>
       <div class="shopping-cart-total">
         <span class="lighter-text">Total:</span>
-        <span class="main-color-text">$2,229.97</span>
+          <%  double total = 0.00;
+              if (cart != null)
+              {
+
+                  foreach (Product p in cart)
+                  {
+                      total += (p.Quantity * p.Price);
+                  }
+              }%>
+        <span class="main-color-text">$<%=total.ToString("F") %></span>
       </div>
     </div> <!--end shopping-cart-header -->
 
     <ul class="shopping-cart-items">
-      
+        <%if (cart != null)
+            {
+                
+                foreach (Product p in cart)
+                {%>
       <li class="clearfix">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />
-        <span class="item-name">Sony DSC-RX100M III</span>
-        <span class="item-price">$849.99</span>
-        <span class="item-quantity">Quantity: 01</span>
+        <img class="cart-image" src="<%=p.Image %>" alt="<%=p.Name %>" />
+        <span class="item-name"><%=p.Name %></span>
+        <span class="item-price">$<%=p.Price.ToString("F") %></span>
+        <span class="item-quantity">Quantity: <%=p.Quantity %></span>
       </li>
-
-      <li class="clearfix">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
-        <span class="item-name">KS Automatic Mechanic...</span>
-        <span class="item-price">$1,249.99</span>
-        <span class="item-quantity">Quantity: 01</span>
-      </li>
-
-      <li class="clearfix">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />
-        <span class="item-name">Kindle, 6" Glare-Free To...</span>
-        <span class="item-price">$129.99</span>
-        <span class="item-quantity">Quantity: 01</span>
-      </li>
+        <%}
+                } %>
     </ul>
 
     <a href="#" class="button">Checkout</a>
@@ -114,4 +140,5 @@
     </form>
 </body>
 </html>
+
 

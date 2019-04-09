@@ -7,12 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace BobbleButt
 {
-    public partial class PageHeader : System.Web.UI.Page
+    public partial class Main : System.Web.UI.Page
     {
-        protected List<Product> cart;
         protected void Page_Load(object sender, EventArgs e)
         {
-            cart = (List<Product>)Session["cart"];
+
         }
     }
 }
