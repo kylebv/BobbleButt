@@ -125,6 +125,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="img\addressSymbol.png" />
     <Content Include="img\batman.png" />
     <Content Include="img\batwoman.png" />
     <Content Include="img\blackWidow.png" />
@@ -132,6 +133,8 @@
     <Content Include="img\cart.png" />
     <Content Include="img\cart_hover.png" />
     <Content Include="img\doctorStrange.png" />
+    <Content Include="img\emailSymbol.png" />
+    <Content Include="img\phoneSymbol.png" />
     <Content Include="img\user.png" />
     <Content Include="img\user_hover.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
