@@ -20,7 +20,6 @@ namespace BobbleButt
             userMap = new Dictionary<string, User>();
             userMap.Add("basicuser@bu.com",new User("Basic", "User", "basicuser@bu.com", "10/10/10", "password", "123 Fake St", "Springfield", 2251, 0400000000, false));
             userMap.Add("adminuser@bobblebutt.com", new User("Admin", "User", "adminuser@bobblebutt.com", "01/01/01", "password", "321 Fake St", "Springfield", 2251, 0499999999, true));
-           
         }
     }
 }

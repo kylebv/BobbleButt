@@ -50,11 +50,7 @@ namespace BobbleButt
                 }
                 else
                 {
-                    User temp = new User();
-                    temp.Email = email;
-                    temp.Password = pword;
-                    Session.Add("tempUser", temp);
-                    Response.Redirect("Registration.aspx");
+                    
                 }
 
             }

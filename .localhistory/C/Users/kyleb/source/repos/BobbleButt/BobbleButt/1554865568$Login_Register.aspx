@@ -44,47 +44,30 @@
                         <div class="form-group">
                             <asp:TextBox runat="server" TextMode="Email" id="regEmail1" class="form-control" placeholder="Your Email *" value="" />
                         </div>
-                                        
                     <div class="form-group">
                             <asp:TextBox runat="server" TextMode="Email" id="regEmail2" class="form-control" placeholder="Re-enter Email *" value="" />
-                        <asp:RegularExpressionValidator Display="Dynamic" ID="regexEmailValid" CssClass="label-error" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="regEmail1" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
-<br />
-                    <asp:CompareValidator 
-                           ID="compareEmails" Display="Dynamic" Operator="Equal" runat="server"
-                           ValidationGroup="Validate" ControlToValidate="regEmail1"  
-                           ControlToCompare="regEmail2" CssClass="label-error" ErrorMessage="Emails do not match." SetFocusOnError="true">
-                    </asp:CompareValidator>
                         </div>
-                    
-
                         <div class="form-group">
                             <asp:TextBox TextMode="Password" runat="server" id="regPassword1" class="form-control" placeholder="Your Password *" value="" />
                         </div>
-                    
                     <div class="form-group">
-                            <asp:TextBox  TextMode="Password" runat="server" id="regPassword2" class="form-control" placeholder="Re-enter Password *" value="" />
-                        <asp:RegularExpressionValidator Display="Dynamic" ID="checkLength" CssClass="label-error" runat="server"
-                           ControlToValidate="regPassword1"
-                           ErrorMessage="Minimum password length is 8"
-                           ValidationExpression=".{8}.*" />
-                        <br />
-                    <asp:CompareValidator
-                           ID="comparePasswords" Display="Dynamic" Operator="Equal" runat="server"
-                           ValidationGroup="Validate" ControlToValidate="regPassword1"  
-                           ControlToCompare="regPassword2" CssClass="label-error" ErrorMessage="Passwords do not match." SetFocusOnError="true">
-                    </asp:CompareValidator>
+                            <asp:TextBox TextMode="Password" runat="server" id="regPassword2" class="form-control" placeholder="Re-enter Password *" value="" />
                         </div>
                     <div class="form-group">
-                            <asp:Button onclick="btnRegister_Click"  runat="server" class="btnSubmit" text="Register" />
+                            <input type="submit" class="btnSubmit" value="Register" />
                         </div>
-                    <div class="form-group">
-                        <label class="ForgetPwd">Register as Admin?</label>
-                        <asp:CheckBox runat="server" CssClass="btn" id="chkAdmin"/>
-                        </div>
-                    <div class="form-group">
-                            <asp:Label ID="errorMessage2" runat="server" Visible="false" class="label-error">Email already exists in our system.</asp:Label>
-                        </div>
-                    
+                    <asp:CompareValidator 
+       ID="compareEmails" Operator="Equal" runat="server"
+       ValidationGroup="Validate" ControlToValidate="regEmail1"  
+       ControlToCompare="regEmail2" ErrorMessage="Emails do not match." SetFocusOnError="true">
+</asp:CompareValidator>
+                    <asp:CompareValidator 
+       ID="comparePasswords" Operator="Equal" runat="server"
+       ValidationGroup="Validate" ControlToValidate="regPassword1"  
+       ControlToCompare="regPassword2" ErrorMessage="Passwords do not match." SetFocusOnError="true">
+</asp:CompareValidator>
+                    <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="reg" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
+
                         </div>
                 </div>
             </div>

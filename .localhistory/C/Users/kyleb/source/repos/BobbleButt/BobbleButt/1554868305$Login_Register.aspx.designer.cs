@@ -103,13 +103,13 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.TextBox regPassword2;
         
         /// <summary>
-        /// checkLength control.
+        /// checkEmpty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator checkLength;
+        protected global::System.Web.UI.WebControls.CustomValidator checkEmpty;
         
         /// <summary>
         /// comparePasswords control.

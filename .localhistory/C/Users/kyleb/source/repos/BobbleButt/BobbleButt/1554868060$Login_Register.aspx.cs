@@ -36,28 +36,5 @@ namespace BobbleButt
                 ((Label)FindControl("errorMessage")).Visible = true;
             }
         }
-        protected void btnRegister_Click(object sender, System.EventArgs e)
-        {
-            if(IsValid)
-            {
-                string email = ((TextBox)FindControl("regEmail1")).Text;
-                string pword = ((TextBox)FindControl("regPassword1")).Text;
-                if (GlobalData.userMap.ContainsKey(email))
-                {
-                    
-                     ((Label)FindControl("errorMessage2")).Visible = true;
-                    
-                }
-                else
-                {
-                    User temp = new User();
-                    temp.Email = email;
-                    temp.Password = pword;
-                    Session.Add("tempUser", temp);
-                    Response.Redirect("Registration.aspx");
-                }
-
-            }
-        }
     }
 }

@@ -103,15 +103,6 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.TextBox regPassword2;
         
         /// <summary>
-        /// checkLength control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator checkLength;
-        
-        /// <summary>
         /// comparePasswords control.
         /// </summary>
         /// <remarks>
@@ -119,23 +110,5 @@ namespace BobbleButt {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator comparePasswords;
-        
-        /// <summary>
-        /// chkAdmin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAdmin;
-        
-        /// <summary>
-        /// errorMessage2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorMessage2;
     }
 }

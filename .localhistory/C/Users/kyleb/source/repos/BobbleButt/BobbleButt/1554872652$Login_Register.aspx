@@ -48,7 +48,7 @@
                     <div class="form-group">
                             <asp:TextBox runat="server" TextMode="Email" id="regEmail2" class="form-control" placeholder="Re-enter Email *" value="" />
                         <asp:RegularExpressionValidator Display="Dynamic" ID="regexEmailValid" CssClass="label-error" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="regEmail1" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
-<br />
+
                     <asp:CompareValidator 
                            ID="compareEmails" Display="Dynamic" Operator="Equal" runat="server"
                            ValidationGroup="Validate" ControlToValidate="regEmail1"  
@@ -67,7 +67,7 @@
                            ControlToValidate="regPassword1"
                            ErrorMessage="Minimum password length is 8"
                            ValidationExpression=".{8}.*" />
-                        <br />
+                       
                     <asp:CompareValidator
                            ID="comparePasswords" Display="Dynamic" Operator="Equal" runat="server"
                            ValidationGroup="Validate" ControlToValidate="regPassword1"  

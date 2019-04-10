@@ -67,24 +67,6 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.TextBox regEmail2;
         
         /// <summary>
-        /// regexEmailValid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmailValid;
-        
-        /// <summary>
-        /// compareEmails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator compareEmails;
-        
-        /// <summary>
         /// regPassword1 control.
         /// </summary>
         /// <remarks>
@@ -103,13 +85,13 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.TextBox regPassword2;
         
         /// <summary>
-        /// checkLength control.
+        /// compareEmails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator checkLength;
+        protected global::System.Web.UI.WebControls.CompareValidator compareEmails;
         
         /// <summary>
         /// comparePasswords control.
@@ -121,21 +103,12 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.CompareValidator comparePasswords;
         
         /// <summary>
-        /// chkAdmin control.
+        /// regexEmailValid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAdmin;
-        
-        /// <summary>
-        /// errorMessage2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorMessage2;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmailValid;
     }
 }
