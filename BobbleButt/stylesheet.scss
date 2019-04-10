@@ -4,8 +4,10 @@
 body { 
 }
 html, body {
-    margin: 0px;
-    padding: 40px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 36px;
+    
 }
 $navbar-blue: #374799 ;
 .navbar-dark {
@@ -318,4 +320,53 @@ img {
     background-color:$navbar-blue;
 }
 
+.contact-column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+.contact-row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*https://www.w3schools.com/howto/howto_css_image_center.asp */
+.contact-image-centre {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 150px;
+    max-width:50%;
+ 
+}
+.contact-text-contacts {
+    width: 100%;
+    text-align: center;
+    color: darkgray
+}
+
+.blue-text {
+    color: $navbar-blue;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+    height: 100%
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    //padding-top: 20px;
+    background-color: #f1f1f1;
+    max-height: 100%;
+}
+
+.pad-from-navbar {
+    padding-top: 35px;
+}
+.pad-from-footer {
+    padding-bottom: 35px;
+}
 
