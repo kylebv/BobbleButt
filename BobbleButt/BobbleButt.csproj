@@ -132,8 +132,11 @@
     <Content Include="img\bobblebuttlogo.png" />
     <Content Include="img\cart.png" />
     <Content Include="img\cart_hover.png" />
+    <Content Include="img\DCCategory.png" />
+    <Content Include="img\disneyCategory.png" />
     <Content Include="img\doctorStrange.png" />
     <Content Include="img\emailSymbol.png" />
+    <Content Include="img\marvelCategory.png" />
     <Content Include="img\phoneSymbol.png" />
     <Content Include="img\user.png" />
     <Content Include="img\user_hover.png" />
