@@ -158,6 +158,14 @@ nav ul li {
   .button:hover {
     background: #729ef9; }
 
+.signout {
+  text-align: center;
+  color: #58a51a; }
+
+.greenify {
+  background: white;
+  border: solid 3px #58a51a; }
+
 .clearfix:after {
   content: "";
   display: table;
@@ -176,6 +184,9 @@ nav ul li {
   text-align: center;
   color: #333;
   padding-bottom: 50px; }
+
+.label-error {
+  color: red; }
 
 .login-form-2 {
   padding: 5%;

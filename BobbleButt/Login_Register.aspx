@@ -22,30 +22,40 @@
                 <div class="col-md-6 login-form-1">
                     <h3>Sign In</h3>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                            <asp:TextBox  id="logEmail" class="form-control" runat="server" placeholder="Your Email *" value="" />
                         </div>
+                    
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                            <asp:TextBox type="password" id="logPassword" runat="server" class="form-control" placeholder="Your Password *" value="" />
                         </div>
+                    
                         <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" />
+                            <asp:Button onclick="btnLogin_Click"  runat="server" class="btnSubmit" text="Login" />
                         </div>
                         <div class="form-group">
                             <a href="#" class="ForgetPwd">Forget Password?</a>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="errorMessage" runat="server" Visible="false" class="label-error">Login details do not match any in our system.</asp:Label>
                         </div>
                 </div>
                 <div class="col-md-6 login-form-2">
                     <h3>Register</h3>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                            <input type="text" id="regEmail1" class="form-control" placeholder="Your Email *" value="" />
+                        </div>
+                    <div class="form-group">
+                            <input type="text" id="regEmail2" class="form-control" placeholder="Re-enter Email *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                            <input type="password" id="regPassword1" class="form-control" placeholder="Your Password *" value="" />
                         </div>
-                        <div class="form-group">
+                    <div class="form-group">
+                            <input type="password" id="regPassword2" class="form-control" placeholder="Re-enter Password *" value="" />
+                        </div>
+                    <div class="form-group">
                             <input type="submit" class="btnSubmit" value="Register" />
                         </div>
-                        <div class="form-group">
 
                         </div>
                 </div>

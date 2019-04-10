@@ -225,7 +225,14 @@ img {
 }
 
 }
-
+.signout {
+    text-align: center;
+    color: #58a51a;
+}
+.greenify {
+    background: white;
+    border: solid 3px #58a51a;
+}
 .clearfix:after {
     content: "";
     display: table;
@@ -247,6 +254,9 @@ img {
     text-align: center;
     color: #333;
     padding-bottom: 50px;
+}
+.label-error{
+    color:red;
 }
 
 .login-form-2 {
