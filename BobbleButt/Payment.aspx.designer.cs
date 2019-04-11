@@ -40,21 +40,84 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.Button creditCardBtnSwitch;
         
         /// <summary>
-        /// creditCardBtn control.
+        /// paypalEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button creditCardBtn;
+        protected global::System.Web.UI.WebControls.TextBox paypalEmail;
         
         /// <summary>
-        /// logEmail control.
+        /// paypalEmailErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox logEmail;
+        protected global::System.Web.UI.WebControls.Label paypalEmailErrorMessage;
+        
+        /// <summary>
+        /// paypalPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox paypalPassword;
+        
+        /// <summary>
+        /// paypalPasswordErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label paypalPasswordErrorMessage;
+        
+        /// <summary>
+        /// creditCardNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox creditCardNumber;
+        
+        /// <summary>
+        /// creditCardNumberError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label creditCardNumberError;
+        
+        /// <summary>
+        /// creditCSC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox creditCSC;
+        
+        /// <summary>
+        /// creditCSCError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label creditCSCError;
+        
+        /// <summary>
+        /// creditCardDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label creditCardDate;
     }
 }

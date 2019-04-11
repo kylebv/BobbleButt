@@ -32,6 +32,19 @@
            
         }
 
+        function dateValidate() {
+           
+            var selectedMonth = $("select.creditCardMonth").children("options:selected").text(); 
+            var selectedYear = $("select.creditCardYear").children("options:selected").text();
+            if (selectedMonth == "January" && selectedYear == "2019" || selectedMonth == "February" && selectedYear == "2019" || selectedMonth == "March" && selectedYear == "2019") {
+                $("#creditCardDate").show();
+            }
+            else {
+                $("#creditCardDate").hide();
+            }
+        }
+        
+
            
     </script>
     </head>
@@ -62,35 +75,26 @@
 <div id="PaypalDiv" class="payment-container login-container">
             <div class="row">
                 <div class="col-md-12 login-form-1">
-                    <!--<h3>Payment</h3>
-                        <label> Select Payment: </label>
-                        <div class="form-group">
-                            <label>
-                            <asp:Button runat="server" Text="Paypal"/>
-                            <span class="glyphicon glyphicon-ok"></span>
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                            <asp:Button id="creditCardBtn" runat="server" Text="Credit Card" OnClientClick="togglePayment();return false;"/>
-                                <span class="glyphicon glyphicon-ok"></span>
-                            </label>
-                        </div>-->
-       
-
-
                         <div class="form-group">
                             <label>Email:</label>
-                            <asp:TextBox textmode="Email" id="logEmail" class="form-control" runat="server" placeholder="Email" value="" OnTextChanged="logEmail_TextChanged" />
+                            <asp:TextBox textmode="Email" id="paypalEmail" class="form-control" runat="server" placeholder="Email" value="" OnTextChanged="logEmail_TextChanged" />
+                        </div>
+
+                        <div class="form-group">
+                            <asp:Label ID="paypalEmailErrorMessage" runat="server" Visible="false" class="label-error">Email field cannot be empty</asp:Label>
                         </div>
                     
                         <div class="form-group">
                             <label>Password:</label>
-                            <asp:TextBox runat="server" class="form-control" placeholder="Password" value="" />
+                            <asp:TextBox id="paypalPassword" type="password" runat="server" class="form-control" placeholder="Password" value="" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <asp:Label ID="paypalPasswordErrorMessage" runat="server" Visible="false" class="label-error">Password field cannot be empty</asp:Label>
                         </div>
 
                           <div class="form-group">
-                            <asp:Button runat="server" class="btnSubmit" text="Submit"/>
+                            <asp:Button runat="server" class="btnSubmit" text="Submit" OnClick="paypalBtn_Click"/>
                         </div>
                 </div>
             </div>
@@ -100,19 +104,24 @@
                 <div class="col-md-12 login-form-1">
                         <div class="form-group">
                             <label>Card Number:</label>
-                            <asp:TextBox class="form-control" runat="server" placeholder="Card Number" value="" />
+                            <asp:TextBox class="form-control" type="number" runat="server" placeholder="Card Number" id="creditCardNumber"/>
                         </div>
-                    
+                        <div class="form-group">
+                            <asp:Label ID="creditCardNumberError" runat="server" Visible="false" class="label-error">Card Number is NOT the correct length</asp:Label>
+                        </div>
                         <div class="form-group">
                             <label>CSC:</label>
-                            <asp:TextBox runat="server" class="form-control" placeholder="CSC" value="" />
+                            <asp:TextBox runat="server" type="number" class="form-control" placeholder="CSC" id="creditCSC" />
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="creditCSCError" runat="server" Visible="false" class="label-error">CSC is NOT the correct length</asp:Label>
                         </div>
 
 
                         <div>
                         <label>Card Expiry Date:</label>
                             <div>
-                              <select>
+                              <select id="creditCardMonth" name="month">
                                 <option>January</option>       
                                 <option>February</option>       
                                 <option>March</option>       
@@ -128,7 +137,8 @@
                               </select>
                             </div> <br/>
                             <div>
-                              <select>
+                           
+                              <select id="creditCardYear" name="year">
                                 <option>2019</option>       
                                 <option>2020</option>       
                                 <option>2021</option>       
@@ -144,8 +154,11 @@
                               </select>
                             </div>
                           </div> <br/>
+                        <div class="form-group">
+                            <asp:Label ID="creditCardDate" runat="server" Visible="false" class="label-error">Date is invalid: Cannot be before current date</asp:Label>
+                            </div>
                           <div class="form-group">
-                            <asp:Button runat="server" class="btnSubmit" text="Submit" />
+                            <asp:Button runat="server" class="btnSubmit" text="Submit" OnClick="creditCardBtn_Click" OnClientClick="dateValidate()"/>
                         </div>
                 </div>
             </div>
