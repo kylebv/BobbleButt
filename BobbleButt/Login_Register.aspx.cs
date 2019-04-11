@@ -42,6 +42,7 @@ namespace BobbleButt
             {
                 string email = ((TextBox)FindControl("regEmail1")).Text;
                 string pword = ((TextBox)FindControl("regPassword1")).Text;
+                bool isAdmin = ((CheckBox)FindControl("chkAdmin")).Checked;
                 if (GlobalData.userMap.ContainsKey(email))
                 {
                     
@@ -53,6 +54,7 @@ namespace BobbleButt
                     User temp = new User();
                     temp.Email = email;
                     temp.Password = pword;
+                    temp.IsAdmin = isAdmin;
                     Session.Add("tempUser", temp);
                     Response.Redirect("Registration.aspx");
                 }

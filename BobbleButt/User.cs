@@ -11,7 +11,7 @@ namespace BobbleButt
         {
         }
 
-        public User(string firstName, string lastName, string email, string dOB, string password, string street, string suburb, int postcode, int phone, bool isAdmin)
+        public User(string firstName, string lastName, string email, string dOB, string password, string street, string suburb, string postcode, string phone, bool isAdmin)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -32,8 +32,8 @@ namespace BobbleButt
         public string Password { get; set; }
         public string Street { get; set; }
         public string Suburb { get; set; }
-        public int Postcode { get; set; }
-        public int Phone { get; set; }
+        public string Postcode { get; set; }
+        public string Phone { get; set; }
         public bool IsAdmin { get; set; }
 
     }

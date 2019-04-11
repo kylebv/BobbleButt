@@ -16,7 +16,7 @@
     </head>
 <body class="blue">
     <form id="form1" runat="server">
-        <img src="img/bobblebuttlogo.png" class="img-fixed-logo" style="max-width:15%"/>
+        <img src="img/bobblebuttlogo.png" class="img-fixed-logo"/>
         <div class="container login-container">
             <div class="row">
                 <div class="col-md-6 login-form-1">
@@ -32,9 +32,7 @@
                         <div class="form-group">
                             <asp:Button onclick="btnLogin_Click"  runat="server" class="btnSubmit" text="Login" />
                         </div>
-                        <div class="form-group">
-                            <a href="#" class="ForgetPwd">Forget Password?</a>
-                        </div>
+                        
                         <div class="form-group">
                             <asp:Label ID="errorMessage" runat="server" Visible="false" class="label-error">Login details do not match any in our system.</asp:Label>
                         </div>

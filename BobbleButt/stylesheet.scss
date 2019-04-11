@@ -19,6 +19,9 @@ $navbar-blue: #374799 ;
     margin: 12px;
 
 }
+.reg-form{
+    max-width:60%
+}
 .badge {
     background-color: red;
     border-radius: 10px;
@@ -81,10 +84,7 @@ ul {
 }
 }
 
-.container {
-    margin: auto;
-    width: 80%;
-}
+
 
 .cart-image{
     max-height:15%
@@ -112,7 +112,20 @@ ul {
     text-decoration: none;
     display: block;
 }
+.product-list-img {
+    height: auto;
+    width: auto;
+    max-height: 250px;
+    max-width:250px;
+}
+.price-card{
+    color:maroon;
+    font-weight:bold;
+}
 
+.product-max-height{
+    height:100px;
+}
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
     background-color: #ddd;
@@ -245,7 +258,9 @@ img {
     margin-top: 5%;
     margin-bottom: 5%;
 }
-
+.shadow {
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
 .login-form-1 {
     padding: 5%;
     background-color: white;
@@ -302,6 +317,20 @@ img {
     font-weight: 600;
     text-decoration: none;
 }
+.user-heading{
+    font-size:small;
+    padding-right:20px;
+}
+.headerBadge2 {
+    position: relative;
+    top: -40px;
+    right: 25px;
+}
+.headerBadge1 {
+    position: relative;
+    top: -15px;
+    right: 25px;
+}
 
 .login-form-1 .ForgetPwd {
     color: $navbar-blue;
@@ -311,10 +340,11 @@ img {
 .form-control{
     max-width:100%
 }
-.img-fixed-logo{
-    position:fixed;
-    left:42.5%;
-    top:5%;
+.img-fixed-logo {
+    position: relative;
+    left: 42.5%;
+    top: 5%;
+    max-width: 15%
 }
 .blue{
     background-color:$navbar-blue;
@@ -341,10 +371,23 @@ img {
     max-width:50%;
  
 }
+.wid-8 {
+    max-width: 8%
+}
 .contact-text-contacts {
     width: 100%;
     text-align: center;
     color: darkgray
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    left:0%;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: $navbar-blue;
+    
 }
 
 .blue-text {
