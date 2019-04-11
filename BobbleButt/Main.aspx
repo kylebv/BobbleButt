@@ -4,45 +4,90 @@
 
 <asp:Content runat="server" ContentPlaceHolderID="Main"> 
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
  
 
-    <!-- Wrapper for slides -->
-    <div class="col-sm-12">
-      <div class="item active">
-        <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
-        <div class="carousel-caption">
-          <h3>Sell $</h3>
-          <p>Money Money.</p>
-        </div>      
-      </div>
+<!--https://www.popcultcha.com.au/-->
+<div class="col-sm-12">
+    <img src="img/mainBackground.png" alt="Image" class="main-central-img">
 </div>
+
   
-<div class="container text-center">    
-  <h3 class="blue-text">Popular Categories</h3><br>
+<h3 class="main-heading-text">Popular Categories</h3>
+<div class="container pad-from-navbar">    
   <div class="row">
     <div class="col-sm-4">
-      <!--https://www.goodfon.com/wallpaper/justice-league-dc-comics-2290.html-->
-      <a href="contact.aspx">
-      <img src="img/DCCategory.png" class="img-responsive" style="width:100%" alt="Image">
-      </a>
-      <p class="blue-text">DC</p>
+      <div class="card"> <!--card-primary-->
+            <a href="contact.aspx">
+            <div class="card-header bg-secondary main-text-color main-text-hover">DC</div>
+            <!--https://www.goodfon.com/wallpaper/justice-league-dc-comics-2290.html-->
+            <img src="img/DCCategory.png" class="img-responsive main-height-img" style="width:100%;" alt="Image">
+            </a>
+      </div>
     </div>
     <div class="col-sm-4"> 
-      <!--https://wall.alphacoders.com/big.php?i=512776-->
-      <a href="contact.aspx">
-      <img src="img/disneyCategory.png" class="img-responsive" style="width:100%" alt="Image">
-      </a>
-      <p class="blue-text">Disney</p>    
+      <div class="card"> 
+            <a href="contact.aspx">
+            <div class="card-header bg-secondary main-text-color main-text-hover">Disney</div>
+            <!--https://wall.alphacoders.com/big.php?i=512776-->
+            <img src="img/disneyCategory.png" class="img-responsive main-height-img" style="width:100%" alt="Image">
+            </a>
+      </div>
     </div>
-    <div class="col-sm-4">
-      <!--https://awallpaperspc.blogspot.com/2018/12/marvel-backgrounds-wallpaper.html-->
-      <a href="contact.aspx">
-      <img src="img/marvelCategory.png" class="img-responsive" style="width:100%" alt="Image">
-      </a>
-      <p class="blue-text">Marvel</p>
+    <div class="col-sm-4"> 
+      <div class="card">
+            <a href="contact.aspx">
+            <div class="card-header bg-secondary main-text-color main-text-hover">Marvel</div>
+            <!--https://awallpaperspc.blogspot.com/2018/12/marvel-backgrounds-wallpaper.html-->
+            <img src="img/marvelCategory.png" class="img-responsive main-height-img" style="width:100%" alt="Image">
+            </a>
+      </div>
     </div>
   </div>
-</div><br>
+</div>
+
+
+
+
+<!--https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_store&stacked=h-->
+<h3 class="main-heading-text">Trending Now</h3>
+<div class="container pad-from-navbar">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card main-box-color">
+            <a href="contact.aspx">
+            <div class="card-header bg-secondary main-text-color main-text-hover">Batman</div>
+            <div class="card-body">
+            <img src="img/batman.png" class="img-responsive main-height-img-product" style="width:100%" alt="Image">
+            </div>
+            </a>
+        <!--<div class="card-footer">Buy 50 mobiles and get a gift card</div>-->
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="card main-box-color">
+            <a href="contact.aspx">
+            <div class="card-header bg-secondary main-text-color main-text-hover">Batwoman</div>
+            <div class="card-body">
+            <img src="img/batwoman.png" class="img-responsive main-height-img-product" style="width:100%" alt="Image">
+            </div>
+            </a>
+        <!--<div class="card-footer">Buy 50 mobiles and get a gift card</div>-->
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="card main-box-color">
+            <a href="contact.aspx">
+            <div class="card-header bg-secondary main-text-color main-text-hover">Iron-man</div>
+            <!--https://www.popcultcha.com.au/captain-america-civil-war-iron-man-wobbler-bobble-head.html-->
+            <div class="card-body">
+            <img src="img/ironMan.png" class="img-responsive main-height-img-product" style="width:100%" alt="Image">
+            </div>
+            </a>
+        <!--<div class="card-footer">Buy 50 mobiles and get a gift card</div>-->
+      </div>
+    </div>
+  </div>
+</div>
 
 </asp:content>

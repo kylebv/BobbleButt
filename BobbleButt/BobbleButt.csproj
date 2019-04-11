@@ -136,10 +136,13 @@
     <Content Include="img\disneyCategory.png" />
     <Content Include="img\doctorStrange.png" />
     <Content Include="img\emailSymbol.png" />
+    <Content Include="img\ironMan.png" />
+    <Content Include="img\mainBackground.png" />
     <Content Include="img\marvelCategory.png" />
     <Content Include="img\phoneSymbol.png" />
     <Content Include="img\user.png" />
     <Content Include="img\user_hover.png" />
+    <Content Include="Payment.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -246,6 +249,13 @@
     </Compile>
     <Compile Include="PageHeader.Master.designer.cs">
       <DependentUpon>PageHeader.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="Contact.aspx.cs">

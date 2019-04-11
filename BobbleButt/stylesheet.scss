@@ -375,3 +375,44 @@ img {
     margin: auto;
     min-height: 200px;
 }
+
+.main-height-img {
+    height:200px;
+}
+
+.main-height-img-product{
+    height:250px;
+}
+
+.main-text-color {
+    color:white;
+    text-align: center;
+}
+
+.main-text-hover:hover {
+    text-decoration: underline;
+}
+
+.main-box-color:hover {
+    background-color: rgba(128, 128, 128, 0.5)
+}
+
+.main-heading-text {
+    text-align: center;
+    padding-top: 35px;
+    color: $navbar-blue
+}
+
+.main-central-img {
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    width:100%
+}
+
+.payment-container {
+    margin: auto;
+    width: 30%;
+}
+
+.payment-invisible {
+    display:none;
+}
