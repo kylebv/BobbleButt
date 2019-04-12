@@ -22,7 +22,7 @@
 						<tr>
 							<td data-th="Product">
 								<div class="row">
-									<div class="col-sm-2 hidden-xs"><img src="<%=p.Image %>" alt="..." class="cart-image-lg"/></div>
+									<div class="col-sm-2 hidden-xs"><img src="<%=p.Image %>" alt="..." class="cart-icon"/></div>
 									<div class="col-sm-10 pad-left-table">
 										<h4 class="pad-left-table"><%=p.Name %></h4>
 										<p class="pad-left-table"><%=p.Description %></p>

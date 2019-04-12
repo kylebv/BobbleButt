@@ -22,7 +22,7 @@
 						<tr>
 							<td data-th="Product">
 								<div class="row">
-									<div class="col-sm-2 hidden-xs"><img src="<%=p.Image %>" alt="..." class="cart-image-lg"/></div>
+									<div class="col-sm-2 hidden-xs"><img src="<%=p.Image %>" alt="..." class="img-responsive"/></div>
 									<div class="col-sm-10 pad-left-table">
 										<h4 class="pad-left-table"><%=p.Name %></h4>
 										<p class="pad-left-table"><%=p.Description %></p>
@@ -45,7 +45,7 @@
 						
 						<tr>
 							<td colspan="3" class="hidden-xs"></td>
-							<td class="hidden-xs text-center"><strong>Total: $<%=total.ToString("F") %></strong></td>
+							<td class="hidden-xs text-center"><strong>Total <%=total %></strong></td>
 							<td><a href="#" class="btn btn-success btn-block">Checkout</a></td>
 						</tr>
 					</tfoot>
