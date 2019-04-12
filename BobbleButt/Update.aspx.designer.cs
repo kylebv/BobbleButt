@@ -22,49 +22,49 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.Label errorMessage;
         
         /// <summary>
-        /// productName control.
+        /// productUpdateName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productName;
+        protected global::System.Web.UI.WebControls.TextBox productUpdateName;
         
         /// <summary>
-        /// productCategory control.
+        /// productUpdateCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productCategory;
+        protected global::System.Web.UI.WebControls.TextBox productUpdateCategory;
         
         /// <summary>
-        /// productStock control.
+        /// productUpdateStock control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productStock;
+        protected global::System.Web.UI.WebControls.TextBox productUpdateStock;
         
         /// <summary>
-        /// productDescription control.
+        /// productUpdateDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productDescription;
+        protected global::System.Web.UI.WebControls.TextBox productUpdateDescription;
         
         /// <summary>
-        /// productPrice control.
+        /// productUpdatePrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productPrice;
+        protected global::System.Web.UI.WebControls.TextBox productUpdatePrice;
         
         /// <summary>
         /// productImage control.
@@ -76,12 +76,21 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.TextBox productImage;
         
         /// <summary>
-        /// productQuantity control.
+        /// updateFileUploadImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productQuantity;
+        protected global::System.Web.UI.WebControls.FileUpload updateFileUploadImg;
+        
+        /// <summary>
+        /// productUpdateQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox productUpdateQuantity;
     }
 }
