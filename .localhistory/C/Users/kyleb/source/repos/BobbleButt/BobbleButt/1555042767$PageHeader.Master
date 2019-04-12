@@ -77,12 +77,12 @@
           { %>
     <a href="Admin_Users.aspx">Users</a>
     <a href="#">Items</a>
-    <a href="Orders.aspx">Orders</a>
+    <a href="#">Orders</a>
       <a href="#">Postage Options</a>
       <%}
     else
     { %>
-      <a href="Orders.aspx?user=<%=user.Email %>">Order History</a>
+      <a href="#">Order History</a>
       <%} %>
       <a href="SignOut.aspx">Sign Out</a>
   </div>
@@ -159,7 +159,7 @@
                 } %>
     </ul>
 
-    <a href="Checkout.aspx" class="button">Checkout</a>
+    <a href="#" class="button">Checkout</a>
   </div> <!--end shopping-cart -->
 </div> <!--end container -->
     
