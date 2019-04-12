@@ -59,6 +59,9 @@ namespace BobbleButt
         {
             string creditMonth = Request.Form["month"];
             string creditYear = Request.Form["year"];
+            string creditCardNumber = ((TextBox)FindControl("creditCardNumber")).Text;
+            string creditCSC = ((TextBox)FindControl("creditCSC")).Text;
+            
             if (creditMonth == "January" && creditYear == "2019" || creditMonth == "February" && creditYear == "2019" || creditMonth == "March" && creditYear == "2019")
             { 
               
@@ -70,8 +73,7 @@ namespace BobbleButt
             }
 
 
-            string creditCardNumber = ((TextBox)FindControl("creditCardNumber")).Text;
-            string creditCSC = ((TextBox)FindControl("creditCSC")).Text;
+            
             //string credit = ((TextBox)FindControl("creditCardNumber")).Text;
             int creditCardNumberLength = creditCardNumber.Length;
             int creditCSCLength = creditCSC.Length;
