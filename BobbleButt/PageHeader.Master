@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PageHeader.master.cs" Inherits="BobbleButt.PageHeader" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PageHeader.master.cs" Inherits="BobbleButt.PageHeader"%>
 
 <%@ Import Namespace="BobbleButt" %>
 
@@ -76,7 +76,7 @@
       <%if (user.IsAdmin)
           { %>
     <a href="Admin_Users.aspx">Users</a>
-    <a href="ManageItmes.aspx">Items</a>
+    <a href="ManageItems.aspx">Items</a>
     <a href="Orders.aspx">Orders</a>
       <a href="#">Postage Options</a>
       <%}
