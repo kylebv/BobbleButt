@@ -270,14 +270,6 @@
       <DependentUpon>EditProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="GlobalData.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="Orders.aspx.cs">
-      <DependentUpon>Orders.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Orders.aspx.designer.cs">
-      <DependentUpon>Orders.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PageHeader.Master.cs">
       <DependentUpon>PageHeader.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
