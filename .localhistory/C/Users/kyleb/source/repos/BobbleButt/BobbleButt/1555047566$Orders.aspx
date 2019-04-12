@@ -25,7 +25,7 @@
                             foreach (Order o in GlobalData.Orders)
                             {
                                 count++;
-                                if (user == null && order == null)
+                                if (mode == null && user == null && order == null)
                                 {%>
                         <tr>
                             <td class="no"><%=count %></td>

@@ -35,7 +35,7 @@
 							</td>
 							<td data-th="Subtotal" class="text-center">$<%=(p.Quantity*p.Price).ToString("F") %></td>
 							<td class="actions" data-th="">
-								<button class="btn btn-info btn-sm" ><i class="fa fa-refresh"></i></button>
+								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
 								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
 							</td>
 						</tr>
