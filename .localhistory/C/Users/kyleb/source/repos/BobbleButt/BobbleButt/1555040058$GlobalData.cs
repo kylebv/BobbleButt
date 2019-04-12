@@ -27,10 +27,7 @@ namespace BobbleButt
             categoryList.Add("DC");
             categoryList.Add("Marvel");
             Orders = new List<Order>();
-            Orders.Add(new Order("basicuser@bu.com", productList, Convert.ToString(DateTime.Now), "Processing"));
-            Orders.Add(new Order("basicuser@bu.com", productList, Convert.ToString(DateTime.Now), "Sent"));
-            Orders.Add(new Order("basicuser@bu.com", productList, Convert.ToString(DateTime.Now), "Sent"));
-
+           
         }
     }
 }
