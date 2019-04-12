@@ -32,7 +32,7 @@
            
         }
 
-        function dateValidate() {
+        /*function dateValidate() {
            
             var selectedMonth = $("select.creditCardMonth").children("options:selected").text(); 
             var selectedYear = $("select.creditCardYear").children("options:selected").text();
@@ -42,7 +42,7 @@
             else {
                 $("#creditCardDate").hide();
             }
-        }
+        }*/
         
 
            
@@ -158,7 +158,7 @@
                             <asp:Label ID="creditCardDate" runat="server" Visible="false" class="label-error">Date is invalid: Cannot be before current date</asp:Label>
                             </div>
                           <div class="form-group">
-                            <asp:Button runat="server" class="btnSubmit" text="Submit" OnClick="creditCardBtn_Click" OnClientClick="dateValidate()"/>
+                            <asp:Button runat="server" class="btnSubmit" text="Submit" OnClick="creditCardBtn_Click"/>
                         </div>
                 </div>
             </div>

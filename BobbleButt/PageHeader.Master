@@ -76,7 +76,7 @@
       <%if (user.IsAdmin)
           { %>
     <a href="#">Users</a>
-    <a href="#">Items</a>
+    <a href="ManageItems.aspx">Items</a>
     <a href="#">Orders</a>
       <a href="#">Postage Options</a>
       <%}
