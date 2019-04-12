@@ -18,16 +18,19 @@ namespace BobbleButt
 
             mode = Request.QueryString["mode"];
             product = Request.QueryString["product"];
-            if (mode.Equals("DeleteItem"))
+            if (mode != null)
+            {
+                if (mode.Equals("DeleteItem"))
                 {
-                GlobalData.productList.RemoveAt(Convert.ToInt32(product));
+                    GlobalData.productList.RemoveAt(Convert.ToInt32(product));
                 }
 
-            if (mode.Equals("UpdateItem"))
-            {
-                //Response.Redirect("~/Update.aspx");
-                Response.Redirect("Update.aspx?PassingValue=" + Server.UrlEncode(product));
-                
+                if (mode.Equals("UpdateItem"))
+                {
+                    //Response.Redirect("~/Update.aspx");
+                    Response.Redirect("Update.aspx?PassingValue=" + Server.UrlEncode(product));
+
+                }
             }
         }
         protected void viewDeleteBtn_Clicked(object sender, System.EventArgs e)

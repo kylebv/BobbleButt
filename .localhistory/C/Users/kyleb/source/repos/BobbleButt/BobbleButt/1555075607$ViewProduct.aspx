@@ -23,6 +23,7 @@
                             <th class="text-right">DESCRIPTION</th>
                             <th class="text-right">PRICE</th>
                             <th class="text-right">IMAGE</th>
+                            <th class="text-right">QUANTITY</th>
                             <th class="text-right">UPDATE</th>
                             <th class="text-right">DELETE</th>
 
@@ -78,7 +79,12 @@
                                 <p><%=p.Image %></p>
                             </td>
                             
-
+                                <!--<td class="unit">-->
+                            
+                            
+                            <td class="text-left">
+                                <p><%=p.Quantity %></p>
+                            </td>
 
                             <td class="text-left">
                                 <input type="button" class="btn btn-success" onclick="window.location.href='ViewProduct.aspx?mode=UpdateItem&product=<%=GlobalData.productList.IndexOf(p)%>'; return false" value="UPDATE"/>
