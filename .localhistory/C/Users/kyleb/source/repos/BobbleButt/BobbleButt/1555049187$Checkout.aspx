@@ -3,7 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         function updateQuantity(control, prod) {
-    window.location.href ="/Checkout.aspx?item="+prod+"&quantity="+document.getElementById(control).value;
+            var val=document.getElementById(control).value
+    window.location.href ='Checkout.aspx?item='+prod+'&quantity='+val;
   }
 </script>
 </asp:Content>
@@ -40,7 +41,7 @@
 							</td>
 							<td data-th="Subtotal" class="text-center">$<%=(p.Quantity*p.Price).ToString("F") %></td>
 							<td class="actions" data-th="">
-								<button class="btn btn-info btn-sm" onclick="updateQuantity('q_<%=GlobalData.productList.IndexOf(p)%>', '<%=GlobalData.productList.IndexOf(p)%>'); return false"><i class="fa fa-refresh"></i></button>
+								<button class="btn btn-info btn-sm" onclick="updateQuantity(q_<%=GlobalData.productList.IndexOf(p)%>, <%=GlobalData.productList.IndexOf(p)%>); return false"><i class="fa fa-refresh"></i></button>
 								<button class="btn btn-danger btn-sm" onclick="window.location.href='/Checkout.aspx?delete=<%=GlobalData.productList.IndexOf(p)%>';return false"><i class="fa fa-trash-o"></i></button>								
 							</td>
 						</tr>

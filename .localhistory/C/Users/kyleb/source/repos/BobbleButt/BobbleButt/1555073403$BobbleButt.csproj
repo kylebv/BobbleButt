@@ -116,7 +116,6 @@
     <Content Include="About.aspx" />
     <Content Include="Admin_Users.aspx" />
     <Content Include="Checkout.aspx" />
-    <Content Include="Checkout_Info.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -262,13 +261,6 @@
     </Compile>
     <Compile Include="Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Checkout_Info.aspx.cs">
-      <DependentUpon>Checkout_Info.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Checkout_Info.aspx.designer.cs">
-      <DependentUpon>Checkout_Info.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditProfile.aspx.cs">
       <DependentUpon>EditProfile.aspx</DependentUpon>

@@ -1,11 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PageHeader.Master" AutoEventWireup="true" CodeBehind="Checkout.aspx.cs" Inherits="BobbleButt.Checkout" %>
 <%@ Import Namespace="BobbleButt" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-        function updateQuantity(control, prod) {
-    window.location.href ="/Checkout.aspx?item="+prod+"&quantity="+document.getElementById(control).value;
-  }
-</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     <div class="container">
@@ -36,12 +31,12 @@
 							</td>
 							<td data-th="Price">$<%=p.Price.ToString("F") %></td>
 							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" id="q_<%=GlobalData.productList.IndexOf(p) %>" value="<%=p.Quantity %>">
+								<input type="number" class="form-control text-center" value="<%=p.Quantity %>">
 							</td>
 							<td data-th="Subtotal" class="text-center">$<%=(p.Quantity*p.Price).ToString("F") %></td>
 							<td class="actions" data-th="">
-								<button class="btn btn-info btn-sm" onclick="updateQuantity('q_<%=GlobalData.productList.IndexOf(p)%>', '<%=GlobalData.productList.IndexOf(p)%>'); return false"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm" onclick="window.location.href='/Checkout.aspx?delete=<%=GlobalData.productList.IndexOf(p)%>';return false"><i class="fa fa-trash-o"></i></button>								
+								<button class="btn btn-info btn-sm" ><i class="fa fa-refresh"></i></button>
+								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
 							</td>
 						</tr>
                         <%} %>
