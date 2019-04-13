@@ -14,7 +14,7 @@ namespace BobbleButt
         {
             postage = Request.QueryString["postage"];
             int index = Convert.ToInt32(postage);
-            if(postage!=null &&!IsPostBack)
+            if(postage!=null)
             {
                 pricePostage.Text = Convert.ToString(GlobalData.postageList[index].Price);
                 namePostage.Text = GlobalData.postageList[index].Name;
@@ -28,13 +28,8 @@ namespace BobbleButt
             }
             else
             {
-                GlobalData.postageList[Convert.ToInt32(postage)].Name = namePostage.Text;
-                GlobalData.postageList[Convert.ToInt32(postage)].Price = Convert.ToInt64(pricePostage.Text);
-                string s1, s2;
-                s2 = namePostage.Text;
-                s1 = GlobalData.postageList[Convert.ToInt32(postage)].Name;
+                GlobalData.postageList[Convert.ToInt32(postage)] = new PostageOptions(namePostage.Text, Convert.ToInt64(pricePostage.Text));
             }
-            Response.Redirect("PostageOptions.aspx");
         }
     }
 }

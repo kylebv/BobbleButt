@@ -10,7 +10,7 @@
 namespace BobbleButt {
     
     
-    public partial class ManageItems {
+    public partial class PostageOptions1 {
         
         /// <summary>
         /// manageInsertName control.

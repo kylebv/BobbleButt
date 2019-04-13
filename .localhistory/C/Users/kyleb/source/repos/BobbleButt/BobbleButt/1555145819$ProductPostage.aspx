@@ -16,7 +16,7 @@
             <!-- Create textbox for postage price -->
             <div class="form-group">
                 <div class="col-sm-12">
-                    <asp:TextBox runat="server" TextMode="Number" id="pricePostage" placeholder="Price" class="form-control"/>
+                    <asp:TextBox runat="server"  id="pricePostage" placeholder="Price" class="form-control"/>
                     <!-- Validators -->
                     <!-- Check if price is greater or equal to zero -->
                     <asp:CompareValidator Display="Dynamic" controlToValidate="pricePostage" runat="server" class="label-error" Operator="GreaterThanEqual" ValueToCompare="0" ErrorMessage="Price field is invalid, value must be greater or equal to zero"></asp:CompareValidator>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <!-- Submission button -->
-            <asp:Button runat="server" OnClick="btnSubmit_Click" class="btn btnSubmit btn-block" Text="Confirm"/>
+            <asp:Button runat="server" class="btn btnSubmit btn-block" Text="Confirm"/>
         </div>
 </asp:Content>
 

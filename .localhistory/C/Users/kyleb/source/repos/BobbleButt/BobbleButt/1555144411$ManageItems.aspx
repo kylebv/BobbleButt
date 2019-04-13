@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PageHeader.Master" AutoEventWireup="true" CodeBehind="ManageItems.aspx.cs" Inherits="BobbleButt.ManageItems" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PageHeader.Master" AutoEventWireup="true" CodeFile="ManageItems.aspx.cs" Inherits="BobbleButt.ManageItems" %>
 
 <%@ Import Namespace="BobbleButt" %>
 
