@@ -78,6 +78,7 @@
                         <div class="form-group">
                             <label>Email:</label>
                             <asp:TextBox textmode="Email" id="paypalEmail" class="form-control" runat="server" placeholder="Email" value="" OnTextChanged="logEmail_TextChanged" />
+                            <!--<asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="paypalEmail" class="label-error" ErrorMessage="Email field cannot be empty"/>-->
                         </div>
 
                         <div class="form-group">
@@ -87,6 +88,7 @@
                         <div class="form-group">
                             <label>Password:</label>
                             <asp:TextBox id="paypalPassword" type="password" runat="server" class="form-control" placeholder="Password" value="" />
+                           <!-- <asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="paypalPassword" class="label-error" ErrorMessage="Password field cannot be empty"/>-->
                         </div>
                         
                         <div class="form-group">
@@ -97,7 +99,7 @@
                             <asp:Button runat="server" class="btnSubmit" text="Submit" OnClick="paypalBtn_Click"/>
                         </div>
                 </div>
-            </div>
+         </div>
 </div>
 <div id="CreditCardDiv" class="payment-container login-container payment-invisible">
             <div class="row">
@@ -105,14 +107,18 @@
                         <div class="form-group">
                             <label>Card Number:</label>
                             <asp:TextBox class="form-control" type="number" runat="server" placeholder="Card Number" id="creditCardNumber"/>
+                            <!--<asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="creditCardNumber" class="label-error" ErrorMessage= "Card Number field cannot be empty"/>-->
                         </div>
+                    
                         <div class="form-group">
                             <asp:Label ID="creditCardNumberError" runat="server" Visible="false" class="label-error">Card Number is NOT the correct length</asp:Label>
                         </div>
                         <div class="form-group">
                             <label>CSC:</label>
-                            <asp:TextBox runat="server" type="number" class="form-control" placeholder="CSC" id="creditCSC" />
+                            <asp:TextBox runat="server" type="number" class="form-control" placeholder="CSC" id="creditCSC" maxLength="4" minLength="3"/>
+                            <!--<asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="creditCSC" class="label-error" ErrorMessage="CSC field cannot be empty"/>-->
                         </div>
+                    
                         <div class="form-group">
                             <asp:Label ID="creditCSCError" runat="server" Visible="false" class="label-error">CSC is NOT the correct length</asp:Label>
                         </div>
@@ -154,7 +160,7 @@
                               </select>
                             </div>
                           </div> <br/>
-                        <div class="form-group">
+                       <div class="form-group">
                             <asp:Label ID="creditCardDate" runat="server" Visible="false" class="label-error">Date is invalid: Cannot be before current date</asp:Label>
                             </div>
                           <div class="form-group">

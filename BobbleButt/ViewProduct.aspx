@@ -2,9 +2,10 @@
 <%@ Import Namespace="BobbleButt" %>
 <asp:Content ID="ViewContent2" ContentPlaceHolderID="Main" runat="server">
     <script type="text/javascript">
-        function deleteList() {
-            
-            $(globa).remove(); 
+        function addNew() {
+            // https://stackoverflow.com/questions/8148632/redirecting-to-another-page-in-asp-net-mvc-using-javascript-jquery
+              window.location.href = 'ManageItems.aspx';
+
         }
     </script>
     <div id="viewItemlist">
@@ -85,7 +86,7 @@
                             </td>
 
                             <td class="text-left">
-                                <input type="button" onclick="window.location.href='ViewProduct.aspx?mode=DeleteItem&product=<%=GlobalData.productList.IndexOf(p)%>'; return false" class="btn btn-success" value="DELETE"/>
+                                <input type="button" onclick="window.location.href='ViewProduct.aspx?mode=DeleteItem&product=<%=GlobalData.productList.IndexOf(p)%>'; return false" class="btn btn-danger" value="DELETE"/>
                                 
                             </td>
                      </tr>
@@ -94,7 +95,7 @@
                     
                 </table>
                 
-
+                <input type="button" onClick="addNew()" class="btn btn-success" value="ADD NEW"/>
         </div>
 
     </div>
