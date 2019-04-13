@@ -78,7 +78,7 @@
     <a href="Admin_Users.aspx">Users</a>
     <a href="ViewProduct.aspx">Items</a>
     <a href="Orders.aspx">Orders</a>
-      <a href="ProductPostage.aspx">Postage Options</a>
+      <a href="#">Postage Options</a>
       <%}
     else
     { %>

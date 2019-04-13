@@ -14,7 +14,7 @@ namespace BobbleButt
         {
             postage = Request.QueryString["postage"];
             int index = Convert.ToInt32(postage);
-            if(postage!=null &&!IsPostBack)
+            if(postage!=null)
             {
                 pricePostage.Text = Convert.ToString(GlobalData.postageList[index].Price);
                 namePostage.Text = GlobalData.postageList[index].Name;

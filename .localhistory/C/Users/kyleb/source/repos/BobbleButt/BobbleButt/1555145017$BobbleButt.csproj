@@ -150,7 +150,6 @@
     <Content Include="img\user_hover.png" />
     <Content Include="Orders.aspx" />
     <Content Include="ManageItems.aspx" />
-    <Content Include="PostageOptions.aspx" />
     <Content Include="ProductPostage.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="Payment.aspx" />
@@ -320,13 +319,6 @@
     </Compile>
     <Compile Include="Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PostageOptions.aspx.cs">
-      <DependentUpon>PostageOptions.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PostageOptions.aspx.designer.cs">
-      <DependentUpon>PostageOptions.aspx</DependentUpon>
     </Compile>
     <Compile Include="PostageOptions.cs" />
     <Compile Include="Product.cs" />
