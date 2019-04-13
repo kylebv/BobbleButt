@@ -58,7 +58,7 @@
 
                         <!-- Image Upload -->
                         <div class="form-group">
-                                <label>Image (.png .jpg):</label>
+                                <label>Image:</label>
                             <!--Author:
                             Use:  To allow for an image to be uploaded
                             Website Name: ASP.net webform Tutorials

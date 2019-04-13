@@ -55,7 +55,7 @@
             </div>
             <!-- Spot to upload images to update product image -->
             <div class="form-group">
-                    <label>Image (.png or .jpg):</label>
+                    <label>Image:</label>
                     <asp:FileUpload id="updateFileUploadImg" runat="server" /> <br/>
                     <!-- Check if no file is selected -->
                     <asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="updateFileUploadImg" class="label-error" ErrorMessage="No file selected"/>
