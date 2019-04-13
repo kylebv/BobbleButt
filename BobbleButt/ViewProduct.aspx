@@ -3,7 +3,7 @@
 <asp:Content ID="ViewContent2" ContentPlaceHolderID="Main" runat="server">
     <script type="text/javascript">
         function addNew() {
-            // https://stackoverflow.com/questions/8148632/redirecting-to-another-page-in-asp-net-mvc-using-javascript-jquery
+           
               window.location.href = 'ManageItems.aspx';
 
         }
@@ -38,7 +38,7 @@
                         {
                             count++;
 
-                            //if (user == null && order == null)
+                           
                                 %>
 
                     <tr>
@@ -54,15 +54,14 @@
                                 <p><%=p.Category %></p>
                                 
                             </td>
-                            <!--<td class="unit">-->
-                                
+ 
                             
                             
                             <td class="text-left">
                                 <p><%=p.Stock %></p>
                                 
                             </td>
-                            <!--<td class="unit">-->
+                          
                                 
                             <td class="text-left">
                                 <p><%=p.Description %></p>
@@ -72,7 +71,7 @@
                                 <p><%=p.Price %></p>
                             </td>
                                 
-                            <!--<td class="unit">-->
+                         
                             
                            
                             <td class="text-left">

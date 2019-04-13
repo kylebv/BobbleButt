@@ -4,8 +4,9 @@
 
 
      <div class="contact-row">
+         <!-- Create 3 different coloumns so that address, email and phone will be in there own coloumn-->
         <div class="contact-column pad-from-footer">
-            <!--https://www.kisspng.com/png-address-symbol-1514075/-->
+            <!-- Address -->
             <img src="img/addressSymbol.png" class="contact-image-centre pad-from-navbar"/>
             <h2 class="contact-text-contacts blue-text">ADDRESS</h2>
             <address style="text-align:center; color:darkgray" class="contact-image-centre">
@@ -15,7 +16,7 @@
             </address>
         </div>
         <div class="contact-column pad-from-footer">
-            <!--https://www.kisspng.com/png-computer-icons-telephone-mobile-phones-symbol-phon-871804/-->
+            <!-- Phone -->
             <img src="img/phoneSymbol.png" class="contact-image-centre pad-from-navbar"/>
             <h2 class="contact-text-contacts blue-text">PHONE</h2>
             <p class="contact-text-contacts"> <strong>Bobblehead Office</strong></p>
@@ -27,8 +28,8 @@
             <p class="contact-text-contacts"> <strong>Bobblehead Robert</strong></p>
             <p class="contact-text-contacts"> Phone: (02) 1342 5346</p>
         </div>
+         <!-- Email -->
         <div class="contact-column pad-from-footer">
-            <!--https://www.kisspng.com/png-email-computer-icons-symbol-clip-art-email-icon-cl-607172/-->
             <img src="img/emailSymbol.png" class="contact-image-centre pad-from-navbar"/>
             <h2 class="contact-text-contacts blue-text">EMAIL</h2>
             <p class="contact-text-contacts"> <strong>Help Email</strong></p>

@@ -4,8 +4,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     <div class="container login-container login-form-2 reg-form">
             <h3>Update Product</h3>
-        <div class="form-group">
-                <asp:Label ID="errorMessage" runat="server" Visible="false" class="label-error">Please enter all required fields</asp:Label>
+           
+            <div class="form-group">
+               
+                <!-- Text box created which is product name takes up 6 coloumns out of 12 -->
                 <div class="col-sm-6">
                     <asp:TextBox runat="server"  id="productUpdateName" placeholder="Product Name"  class="form-control" />
                     <asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="productUpdateName" class="label-error" ErrorMessage="Name field cannot be empty"/>
@@ -37,11 +39,6 @@
                     <asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="productUpdatePrice" class="label-error" ErrorMessage="Price field cannot be empty"/>
                 </div>
             </div>
-            <!--<div class="form-group">
-                <div class="col-sm-6">
-                    <asp:TextBox runat="server" id="productImage" placeholder="Product Image" class="form-control"/>
-                </div>
-            </div>-->
         <div class="form-group">
                             <label>Image:</label>
                            <asp:FileUpload id="updateFileUploadImg" runat="server" /> <br/>
@@ -53,6 +50,7 @@
                             <asp:Label ID="updateImageFileError" runat="server" Visible="false" class="label-error">Wrong file type has been uploaded</asp:Label>
                         </div>
 
+            <!-- Text box for updated quantity -->
             <div class="form-group">
                 <div class="col-sm-4">
                     <asp:TextBox runat="server" type="number" id="productUpdateQuantity" placeholder="Product Quantity" class="form-control"/>
@@ -60,14 +58,7 @@
                     <asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="productUpdateQuantity" class="label-error" ErrorMessage="Quantity field cannot be empty"/>
                 </div>
             </div>
-       
-        <asp:RequiredFieldValidator runat="server" controltovalidate="productUpdateName"/>
-        <asp:RequiredFieldValidator runat="server" controltovalidate="productUpdateCategory"/>
-        <asp:RequiredFieldValidator runat="server" controltovalidate="productUpdateStock"/>
-        <asp:RequiredFieldValidator runat="server" controltovalidate="productUpdateDescription"/>
-        <asp:RequiredFieldValidator runat="server" controltovalidate="productUpdatePrice"/>
-        <asp:RequiredFieldValidator runat="server" controltovalidate="updateFileUploadImg"/>
-        <asp:RequiredFieldValidator runat="server" controltovalidate="productUpdateQuantity"/>
+        
 
                         <div class="form-group">
                 <div class="col-sm-9 col-sm-offset-3">

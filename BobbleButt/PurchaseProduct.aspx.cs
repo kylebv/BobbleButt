@@ -12,20 +12,17 @@ namespace BobbleButt
         string product;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Receive variable value from another page which is Products where products equals index of list products
             product = Request.QueryString["PassingValue"];
-
-            productNumber.Text = product;
-
+            //Change the information purchase product to equal the product at a certain index using 'product' variable
             productViewName.Text = GlobalData.productList[Convert.ToInt32(product)].Name;
             productViewPrice.Text = "Price: $"+Convert.ToString(GlobalData.productList[Convert.ToInt32(product)].Price);
             productViewDescription.Text = GlobalData.productList[Convert.ToInt32(product)].Description;
             productViewImage.ImageUrl = GlobalData.productList[Convert.ToInt32(product)].Image;
-
-
         }
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
-            
+            //Checks to see if product which will be the number to get an item from a list is not null
             if (product != null)
             {
                 int productIndex = Convert.ToInt32(product);

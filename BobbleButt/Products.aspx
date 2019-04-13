@@ -28,7 +28,7 @@
                     <div class="card">
                         <img class="product-list-img" src="<%=p.Image %>" alt="Card image cap">
                         <div class="card-body d-flex flex-column">
-                           <!--<h4 class="card-title"><a href="Product?<%//=GlobalData.productList.IndexOf(p) %>" title="View Product"><%//=p.Name %></a></h4>--> 
+                          
                            <h4 class="card-title"><a href="Products.aspx?mode=PurchaseProductPage&product=<%=GlobalData.productList.IndexOf(p) %>" title="View Product"><%=p.Name %></a></h4>
                             
                             <p class="card-text"><%=p.Description %></p>

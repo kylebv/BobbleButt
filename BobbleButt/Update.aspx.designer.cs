@@ -13,15 +13,6 @@ namespace BobbleButt {
     public partial class Update {
         
         /// <summary>
-        /// errorMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorMessage;
-        
-        /// <summary>
         /// productUpdateName control.
         /// </summary>
         /// <remarks>
@@ -83,15 +74,6 @@ namespace BobbleButt {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator priceValidator;
-        
-        /// <summary>
-        /// productImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productImage;
         
         /// <summary>
         /// updateFileUploadImg control.

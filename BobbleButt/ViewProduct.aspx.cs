@@ -27,7 +27,7 @@ namespace BobbleButt
 
                     if (mode.Equals("UpdateItem"))
                     {
-                        //Response.Redirect("~/Update.aspx");
+                    
                         Response.Redirect("Update.aspx?PassingValue=" + Server.UrlEncode(product));
 
                     }
@@ -38,7 +38,7 @@ namespace BobbleButt
         {
             
 
-            //GlobalData.productList.Remove(Product);
+           
         }
         protected void viewUpdateBtn_Clicked(object sender, System.EventArgs e)
         {
