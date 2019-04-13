@@ -10,25 +10,10 @@ namespace BobbleButt
     public partial class Checkout_Info : System.Web.UI.Page
     {
         protected List<Product> cart;
-        protected void ddlPostage_Changed(object sender, EventArgs e)
-        {
-            postPrice.InnerText= "Postage: $"+GlobalData.postageList[DdlPostage.SelectedIndex].Price.ToString("F");
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
            
             cart = new List<Product>();
-            
-            if (!IsPostBack) {
-                foreach (PostageOptions po in GlobalData.postageList)
-                {
-                    ListItem li = new ListItem();
-                    li.Text = po.Name;
-                    DdlPostage.Items.Add(li);
-                }
-                DdlPostage.SelectedIndex = 0;
-                postPrice.InnerText = "Postage: $" + GlobalData.postageList[DdlPostage.SelectedIndex].Price.ToString("F"); }
-
 
 
             if (Session["cart"] != null)
@@ -53,7 +38,7 @@ namespace BobbleButt
         {
             if(IsValid)
             {
-                Order o = new Order(email.Text, firstName.Text, lastName.Text, phone.Text, streetAddress.Text, suburb.Text, postcode.Text, null, null, DdlPostage.SelectedIndex, ((List<Product>)Session["cart"]), "Processing", DateTime.Now.ToString());
+                Order o = new Order(email.Text, firstName.Text, lastName.Text, phone.Text, streetAddress.Text, suburb.Text, postcode.Text, null, null, ((List<Product>)Session["cart"]), "Processing", DateTime.Now.ToString());
                 if(paypal.Checked)
                 {
                     o.PaypalID = payPalEmail.Text;

@@ -16,9 +16,8 @@ namespace BobbleButt
         public string Postcode { get; set; }
         public string CardNumber { get; set; }
         public string PaypalID { get; set; }
-        public int PostOption { get; set; }
 
-        public Order(string userEmail, string firstName, string lastName, string phone, string streetAddress, string suburb, string postcode, string cardNumber, string paypalID, int postOption, List<Product> products, string status, string date)
+        public Order(string userEmail, string firstName, string lastName, string phone, string streetAddress, string suburb, string postcode, string cardNumber, string paypalID, List<Product> products, string status, string date)
         {
             UserEmail = userEmail;
             FirstName = firstName;
@@ -29,7 +28,6 @@ namespace BobbleButt
             Postcode = postcode;
             CardNumber = cardNumber;
             PaypalID = paypalID;
-            PostOption = postOption;
             Products = products;
             Status = status;
             Date = date;

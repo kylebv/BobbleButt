@@ -46,8 +46,6 @@
               <strong>$<%=total.ToString("F") %></strong>
             </li>
           </ul>
-            <asp:DropDownList AutoPostBack="true" ID="DdlPostage" OnSelectedIndexChanged="ddlPostage_Changed" runat="server"/>
-            <span id="postPrice" runat="server"></span>
 
           
         </div>
@@ -79,7 +77,7 @@
             </div>
             <div class="mb-3">
               <label for="phone">Phone number</label>
-              <asp:TextBox runat="server" TextMode="Number" MaxLength="10" class="form-control" id="phone" placeholder="0412345678 *"/>
+              <asp:TextBox runat="server" TextMode="Number" maxlength="10" class="form-control" id="phone" placeholder="0412345678 *"/>
                 <asp:RequiredFieldValidator ID="valPhone" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a phone number" runat="server" controltovalidate="phone"/>
                                 <asp:RegularExpressionValidator Display="Dynamic" ID="regexPhone" CssClass="label-error" runat="server" ValidationExpression="^[0-9]{10}$" ControlToValidate="phone" ErrorMessage="Invalid Phone Number"></asp:RegularExpressionValidator>
 
@@ -155,7 +153,7 @@
               </div>
               <div class="col-md-3 mb-3">
                 <label for="card_expiration">CVV</label>
-                <asp:TextBox runat="server" class="form-control" MaxLength="3" id="card_cvv" placeholder="" />
+                <asp:TextBox runat="server" class="form-control" id="card_cvv" placeholder="" />
                   <asp:RequiredFieldValidator ID="valCardCvv" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a CVV #" runat="server" controltovalidate="card_cvv"/>
                                   <asp:RegularExpressionValidator Display="Dynamic" ID="regexCardCvv" CssClass="label-error" runat="server" ValidationExpression="^[0-9]{3}$" ControlToValidate="card_cvv" ErrorMessage="Invalid Cvv"></asp:RegularExpressionValidator>
 

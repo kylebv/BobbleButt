@@ -33,7 +33,7 @@
                             
                             <p class="card-text"><%=p.Description %></p>
                             <div class="mt-auto">
-                                <%if ( p.Stock > 0)
+                                <%if (p.Stock > 0)
                                     { %>
                             <p class="price-card">$<%=p.Price.ToString("F") %></p>
                             <button type="submit"  value="Add to Cart" onclick="window.location.href='/Products.aspx?addItem=<%= GlobalData.productList.IndexOf(p) %>'; return false" class="btn btn-success shadow btn-block">Add to Cart</button>

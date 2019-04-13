@@ -36,13 +36,13 @@ namespace BobbleButt
                 {
                     if(p2.Name.Equals(p.Name))
                     {
-                        p2.Stock -= p.Quantity;
+                        p2.Quantity -= p.Quantity;
                     }
                 }
             }
             foreach(Product p in GlobalData.productList)
             {
-                if (p.Stock > 0)
+                if (p.Quantity > 0)
                 {
                     temp.Add(GlobalData.productList[GlobalData.productList.IndexOf(p)]);
                 }

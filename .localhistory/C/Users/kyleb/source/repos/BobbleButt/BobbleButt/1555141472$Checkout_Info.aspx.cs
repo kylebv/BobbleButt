@@ -18,15 +18,13 @@ namespace BobbleButt
         {
            
             cart = new List<Product>();
-            
-            if (!IsPostBack) {
-                foreach (PostageOptions po in GlobalData.postageList)
-                {
-                    ListItem li = new ListItem();
-                    li.Text = po.Name;
-                    DdlPostage.Items.Add(li);
-                }
-                DdlPostage.SelectedIndex = 0;
+            foreach(PostageOptions po in GlobalData.postageList)
+            {
+                ListItem li = new ListItem();
+                li.Text = po.Name;
+                DdlPostage.Items.Add(li);
+            }
+            if (!IsPostBack) { DdlPostage.SelectedIndex = 0;
                 postPrice.InnerText = "Postage: $" + GlobalData.postageList[DdlPostage.SelectedIndex].Price.ToString("F"); }
 
 

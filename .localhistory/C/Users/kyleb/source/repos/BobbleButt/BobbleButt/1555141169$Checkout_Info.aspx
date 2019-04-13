@@ -46,8 +46,8 @@
               <strong>$<%=total.ToString("F") %></strong>
             </li>
           </ul>
-            <asp:DropDownList AutoPostBack="true" ID="DdlPostage" OnSelectedIndexChanged="ddlPostage_Changed" runat="server"/>
-            <span id="postPrice" runat="server"></span>
+            <asp:DropDownList ID="DdlPostage" OnSelectedIndexChanged="ddlPostage_Changed" runat="server"/>
+            <span id="postPrice" runat="server">Postage: $<%= GlobalData.postageList[DdlPostage.SelectedIndex].Price.ToString("F") %></span>
 
           
         </div>

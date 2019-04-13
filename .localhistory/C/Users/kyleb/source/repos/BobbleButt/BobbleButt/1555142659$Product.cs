@@ -5,14 +5,10 @@ using System.Web;
 
 namespace BobbleButt
 {
-    public class Product:ICloneable
+    public class Product
     {
         public Product()
         {
-        }
-        public object Clone()
-        {
-            return this.MemberwiseClone();
         }
 
         public Product(string category, string name, int stock, string description, double price, string image, int quantity)

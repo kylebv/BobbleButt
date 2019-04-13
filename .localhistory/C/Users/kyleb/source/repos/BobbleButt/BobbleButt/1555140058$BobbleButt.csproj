@@ -313,7 +313,6 @@
     <Compile Include="Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PostageOptions.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

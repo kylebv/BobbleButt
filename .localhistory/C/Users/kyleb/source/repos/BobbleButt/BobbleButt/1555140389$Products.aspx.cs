@@ -33,7 +33,8 @@ namespace BobbleButt
                     isCartNew = true;
                 }
                 else { cart = (List<Product>)Session["cart"]; }
-                Product p = (Product)(GlobalData.productList[productIndex]).Clone();
+                Product p = GlobalData.productList[productIndex];
+                p.Quantity = 1;
                 if (isCartNew)
                 {
                     cart.Add(p);
@@ -53,7 +54,7 @@ namespace BobbleButt
                     {
                         cart.Add(p);
                     }
-                    else if(p.Stock>cart[positionIndex].Quantity)
+                    else
                     {
                         cart[positionIndex].Quantity += 1;
                     }

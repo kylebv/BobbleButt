@@ -41,14 +41,6 @@
                   <span class="text-muted">$<%=(p.Quantity*p.Price).ToString("F") %></span>
                 </li>
                   <%} %>
-                  <li class="list-group-item d-flex justify-content-between lh-condensed">
-                  <div>
-                    <h6 class="my-0">Postage</h6>
-                    <small class="text-muted"><%= GlobalData.postageList[order.PostOption].Name %></small>
-                  </div>
-                  <span class="text-muted">$<%=GlobalData.postageList[order.PostOption].Price.ToString("F") %></span>
-                </li>
-                  <%total += GlobalData.postageList[order.PostOption].Price; %>
             
                 <li class="list-group-item d-flex justify-content-between">
                   <span>Total (AUD)</span>
@@ -93,9 +85,6 @@
                 </div>
                 <div class="mb-3">
                   <label for="address"><strong>Street address: </strong><%= order.StreetAddress %></label>
-                </div>
-                <div class="mb-3">
-                  <label for="address"><strong>Postage: </strong><%= GlobalData.postageList[order.PostOption].Name %> ($<%= GlobalData.postageList[order.PostOption].Price.ToString("F") %>)</label>
                 </div>
 
                 <div class="mb-3">

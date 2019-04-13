@@ -34,7 +34,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <asp:Label ID="errorMessage" runat="server" Visible="false" class="label-error">Login details do not match any in our system.</asp:Label>
+                            <asp:Label ID="errorMessage" runat="server" Visible="false" class="label-error">Login failed. You may be suspended, or your details are incorrect.</asp:Label>
                         </div>
                 </div>
                 <div class="col-md-6 login-form-2">
