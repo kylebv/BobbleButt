@@ -27,9 +27,12 @@ namespace BobbleButt
             categoryList.Add("DC");
             categoryList.Add("Marvel");
             Orders = new List<Order>();
-            Orders.Add(new Order("basicuser@bu.com", productList, Convert.ToString(DateTime.Now), "Processing"));
-            Orders.Add(new Order("basicuser@bu.com", productList, Convert.ToString(DateTime.Now), "Sent"));
-            Orders.Add(new Order("basicuser@bu.com", productList, Convert.ToString(DateTime.Now), "Sent"));
+            Orders.Add(new Order("basicuser@bu.com", "kqqqqqqq", "kqqqqqqqqq", "0404040404", "123 fake st", "kqqqqq", "1234", null, "k@k.com", productList, "Processing", Convert.ToString(DateTime.Now)));
+
+            Orders.Add(new Order("basicuser@bu.com", "kqqqqqqq", "kqqqqqqqqq", "0404040404", "123 fake st", "kqqqqq", "1234", null, "k@k.com", productList, "Processing", Convert.ToString(DateTime.Now)));
+
+            Orders.Add(new Order("basicuser@bu.com", "kqqqqqqq", "kqqqqqqqqq", "0404040404", "123 fake st", "kqqqqq", "1234", null, "k@k.com", productList, "Processing", Convert.ToString(DateTime.Now)));
+
 
         }
     }

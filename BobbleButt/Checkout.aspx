@@ -36,12 +36,12 @@
 							</td>
 							<td data-th="Price">$<%=p.Price.ToString("F") %></td>
 							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" id="q_<%=GlobalData.productList.IndexOf(p) %>" value="<%=p.Quantity %>">
+								<input type="number" max=<%=Convert.ToInt32(p.Stock) %> min=0 class="form-control text-center" id="q_<%=cart.IndexOf(p) %>" value="<%=p.Quantity %>">
 							</td>
 							<td data-th="Subtotal" class="text-center">$<%=(p.Quantity*p.Price).ToString("F") %></td>
 							<td class="actions" data-th="">
-								<button class="btn btn-info btn-sm" onclick="updateQuantity('q_<%=GlobalData.productList.IndexOf(p)%>', '<%=GlobalData.productList.IndexOf(p)%>'); return false"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm" onclick="window.location.href='/Checkout.aspx?delete=<%=GlobalData.productList.IndexOf(p)%>';return false"><i class="fa fa-trash-o"></i></button>								
+								<button class="btn btn-info btn-sm" onclick="updateQuantity('q_<%=cart.IndexOf(p)%>', '<%=cart.IndexOf(p)%>'); return false"><i class="fa fa-refresh"></i></button>
+								<button class="btn btn-danger btn-sm" onclick="window.location.href='/Checkout.aspx?delete=<%=cart.IndexOf(p)%>';return false"><i class="fa fa-trash-o"></i></button>								
 							</td>
 						</tr>
                         <%} %>
@@ -51,7 +51,7 @@
 						<tr>
 							<td colspan="3" class="hidden-xs"></td>
 							<td class="hidden-xs text-center"><strong>Total: $<%=total.ToString("F") %></strong></td>
-							<td><a href="#" class="btn btn-success btn-block">Checkout</a></td>
+							<td><a href="Checkout_Info.aspx" class="btn btn-success btn-block">Checkout</a></td>
 						</tr>
 					</tfoot>
 				</table>

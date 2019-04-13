@@ -9,9 +9,14 @@ namespace BobbleButt
 {
     public partial class Main : System.Web.UI.Page
     {
+        protected string orderer;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            orderer = Request.QueryString["orderEmail"];
+            if (orderer != null)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+            }
         }
     }
 }

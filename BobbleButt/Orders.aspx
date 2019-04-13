@@ -88,7 +88,9 @@
                         <%}
                             }
                             else if (mode == null && order == null)
-                            { if (user.Equals(o.UserEmail)){%>
+                            {
+                                if (user.Equals(o.UserEmail))
+                                {%>
                         <tr>
                             <td class="no"><%=count %></td>
                             <td class="text-left">
@@ -115,7 +117,38 @@
                                 }%>
                             <td class="qty"><input type="button" onclick="window.location.href='Orders.aspx?mode=toggleSent&order=<%=GlobalData.Orders.IndexOf(o)%>'; return false" class="btn btn-success" value="<%=sent %>" /></td>
                         </tr>
-                        <%} }
+                        <%}
+                            }
+                            else
+                            { %>
+                        <tr>
+                            <td class="no"><%=count %></td>
+                            <td class="text-left">
+                                <p><%=o.UserEmail %></p>
+                                
+                            </td>
+                            <td class="unit">
+                                <%
+                                    foreach (Product p in o.Products)
+                                    {
+        %>
+                               <p>Name: <%=p.Name %> Quantity: <%=p.Quantity %></p>
+                                <br />
+                                <%}  %>
+
+                            </td>
+                            <td class="qty"><p><%=o.Date %></p></td>
+                            
+                            <td class="unit"><p><%=o.Status %></td>
+                            <%string sent = "Mark as Sent";
+                                if (o.Status.Equals("Sent"))
+                                {
+                                    sent = "Mark as Processing";
+                                }%>
+                            <td class="qty"><input type="button" onclick="window.location.href='Orders.aspx?mode=toggleSent&order=<%=GlobalData.Orders.IndexOf(o)%>'; return false" class="btn btn-success" value="<%=sent %>" /></td>
+                        </tr>
+                        <%}
+
                             }%>
                        
                     </tbody>
