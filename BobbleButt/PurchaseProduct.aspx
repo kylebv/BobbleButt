@@ -2,9 +2,6 @@
 <%@ Import Namespace="BobbleButt" %>
 <asp:Content runat="server" ContentPlaceHolderID="Main"> 
   
- 
-
-
 <div class="container-fluid">
     <div class="content-wrapper">	
 		<div class="item-container">	
@@ -13,10 +10,9 @@
                     <!-- Image slot -->
 					<div class="product col-md-3 card mt-4"">
                         <asp:image runat="server" id="productViewImage" class="card-img-top img-fluid" alt=""/>
-					</div>
-				
+					</div>			
 				</div>
-					
+				<!-- Coloumn for imafe  -->
 				<div class="col-md-7">
                     <h3>
                     <!-- Labels for product name, description and price so that they can be altered with existing data in product list -->

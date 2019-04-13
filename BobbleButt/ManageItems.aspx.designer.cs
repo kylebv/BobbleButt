@@ -13,24 +13,6 @@ namespace BobbleButt {
     public partial class ManageItems {
         
         /// <summary>
-        /// insertBtnSwitch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button insertBtnSwitch;
-        
-        /// <summary>
-        /// updateBtnSwitch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button updateBtnSwitch;
-        
-        /// <summary>
         /// manageInsertName control.
         /// </summary>
         /// <remarks>
@@ -38,15 +20,6 @@ namespace BobbleButt {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox manageInsertName;
-        
-        /// <summary>
-        /// insertNameError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label insertNameError;
         
         /// <summary>
         /// manageInsertCategory control.
@@ -58,15 +31,6 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.TextBox manageInsertCategory;
         
         /// <summary>
-        /// insertCategoryError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label insertCategoryError;
-        
-        /// <summary>
         /// manageInsertStock control.
         /// </summary>
         /// <remarks>
@@ -76,13 +40,13 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.TextBox manageInsertStock;
         
         /// <summary>
-        /// insertStockError control.
+        /// stockValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label insertStockError;
+        protected global::System.Web.UI.WebControls.CompareValidator stockValidator;
         
         /// <summary>
         /// manageInsertDescription control.
@@ -103,13 +67,13 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.TextBox manageInsertPrice;
         
         /// <summary>
-        /// insertPriceError control.
+        /// priceValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label insertPriceError;
+        protected global::System.Web.UI.WebControls.CompareValidator priceValidator;
         
         /// <summary>
         /// FileUploadImg control.
@@ -119,15 +83,6 @@ namespace BobbleButt {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUploadImg;
-        
-        /// <summary>
-        /// insertImageError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label insertImageError;
         
         /// <summary>
         /// insertImageFileError control.
@@ -148,12 +103,12 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.TextBox manageInsertQuantity;
         
         /// <summary>
-        /// insertQuantityError control.
+        /// quantityValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label insertQuantityError;
+        protected global::System.Web.UI.WebControls.CompareValidator quantityValidator;
     }
 }
