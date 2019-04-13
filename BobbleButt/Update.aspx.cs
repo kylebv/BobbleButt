@@ -20,7 +20,6 @@ namespace BobbleButt
                 productUpdateStock.Text = Convert.ToString(GlobalData.productList[(Convert.ToInt32(product))].Stock);
                 productUpdateDescription.Text = GlobalData.productList[(Convert.ToInt32(product))].Description;
                 productUpdatePrice.Text = Convert.ToString(GlobalData.productList[(Convert.ToInt32(product))].Price);
-                //productImage.Text = GlobalData.productList[(Convert.ToInt32(product))].Image;
                 productUpdateQuantity.Text = Convert.ToString(GlobalData.productList[(Convert.ToInt32(product))].Quantity);
             }
         }
@@ -37,16 +36,34 @@ namespace BobbleButt
 
             string InsertImage = "img/" + Convert.ToString(updateFileUploadImg.FileName);
             updateFileUploadImg.SaveAs(Server.MapPath("~/img/" + updateFileUploadImg.FileName));
-                //if (IsValid && updateFileUploadImg.PostedFile.ContentType == "image/jpeg" || updateFileUploadImg.PostedFile.ContentType == "image/png" || updateFileUploadImg.PostedFile.ContentType == "image/jpg")
-                //{
-                //GlobalData.productList.(InsertCategory, InsertName, InsertStock, InsertDescription, InsertPrice, InsertImage, InsertQuantity));
-                GlobalData.productList[Convert.ToInt32(product)].Category = updateCategory;
-                GlobalData.productList[Convert.ToInt32(product)].Name = updateName;
-                GlobalData.productList[Convert.ToInt32(product)].Stock = updateStock;
-                GlobalData.productList[Convert.ToInt32(product)].Description = updateDescription;
-                GlobalData.productList[Convert.ToInt32(product)].Price = updatePrice;
-                GlobalData.productList[Convert.ToInt32(product)].Quantity = updateQuantity;
-                GlobalData.productList[Convert.ToInt32(product)].Image = InsertImage;
+            if (IsValid)
+            {
+
+                if (updateFileUploadImg.PostedFile.ContentType == "image/jpeg" || updateFileUploadImg.PostedFile.ContentType == "image/png" || updateFileUploadImg.PostedFile.ContentType == "image/jpg")
+                {
+                    updateImageFileError.Visible = false;
+
+                    updateFileUploadImg.SaveAs(Server.MapPath("~/img/" + updateFileUploadImg.FileName));
+                    GlobalData.productList[Convert.ToInt32(product)].Category = updateCategory;
+                    GlobalData.productList[Convert.ToInt32(product)].Name = updateName;
+                    GlobalData.productList[Convert.ToInt32(product)].Stock = updateStock;
+                    GlobalData.productList[Convert.ToInt32(product)].Description = updateDescription;
+                    GlobalData.productList[Convert.ToInt32(product)].Price = updatePrice;
+                    GlobalData.productList[Convert.ToInt32(product)].Quantity = updateQuantity;
+                    GlobalData.productList[Convert.ToInt32(product)].Image = InsertImage;
+                    Response.Redirect("ViewProduct.aspx");
+                }
+                else
+                {
+                    updateImageFileError.Visible = true;
+                }
+            }
+            /*else
+            {
+
+                ((Label)FindControl("InsertErrorMessage")).Visible = true;
+            }*/
+            
             
                
             //}

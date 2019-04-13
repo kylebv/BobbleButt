@@ -49,6 +49,15 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.TextBox productUpdateStock;
         
         /// <summary>
+        /// stockValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator stockValidator;
+        
+        /// <summary>
         /// productUpdateDescription control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace BobbleButt {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox productUpdatePrice;
+        
+        /// <summary>
+        /// priceValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator priceValidator;
         
         /// <summary>
         /// productImage control.
@@ -85,6 +103,15 @@ namespace BobbleButt {
         protected global::System.Web.UI.WebControls.FileUpload updateFileUploadImg;
         
         /// <summary>
+        /// updateImageFileError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label updateImageFileError;
+        
+        /// <summary>
         /// productUpdateQuantity control.
         /// </summary>
         /// <remarks>
@@ -92,5 +119,14 @@ namespace BobbleButt {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox productUpdateQuantity;
+        
+        /// <summary>
+        /// quantityValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator quantityValidator;
     }
 }

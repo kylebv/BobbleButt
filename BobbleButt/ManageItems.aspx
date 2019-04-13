@@ -3,59 +3,47 @@
 
 <asp:Content ID="manageModification" runat="server" ContentPlaceHolderID="Main"> 
 
-    <div class="payment-container login-container">
-            <div class="row">
-                <div class="col-md-12 login-form-1">
-                    <h3>Product Management</h3>
-                        <label> Select Modification: </label>
-                        <div class="form-group">
-                            <label>
-                            <asp:Button id="insertBtnSwitch" runat="server" Text="Insert"/>
-                            <span class="glyphicon glyphicon-ok"></span>
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                            <asp:Button id="updateBtnSwitch" runat="server" Text="Update"/>
-                                <span class="glyphicon glyphicon-ok"></span>
-                            </label>
-                        </div>
-                    <hr/>
-                </div>
-            </div>
-</div>
 <div id="PaypalDiv" class="payment-container login-container" style="padding-bottom:35px">
             <div class="row">
                 <div class="col-md-12 login-form-1">
+                    <h3>Product Management</h3>
+                        <!--<div class="form-group">
+                        <asp:Label ID="InsertErrorMessage" runat="server" Visible="false" class="label-error">Please enter all required fields</asp:Label>
+                        </div>-->
                         <div class="form-group">
                             <label>Name:</label>
                             <asp:TextBox id="manageInsertName" class="form-control" runat="server" placeholder="Product Name" value=""/>
+                            <asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="manageInsertName" class="label-error" ErrorMessage="Name field cannot be empty"/>
                         </div>
 
-                        <!-- Error msg for name if input incorrectly. Currently invisible -->
+                        <!-- Error msg for name if input incorrectly. Currently invisible 
                         <div class="form-group">
                             <asp:Label ID="insertNameError" runat="server" Visible="false" class="label-error">Name field cannot be empty</asp:Label>
-                        </div>
+                        </div>-->
 
                         <div class="form-group">
                             <label>Category:</label>
                             <asp:TextBox id="manageInsertCategory" class="form-control" runat="server" placeholder="Product Category" value=""/>
+                            <asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="manageInsertCategory" class="label-error" ErrorMessage="Category field cannot be empty"/>
                         </div>
                         
-                        <!-- Error message for Category -->
+                        <!-- Error message for Category 
                         <div class="form-group">
                             <asp:Label ID="insertCategoryError" runat="server" Visible="false" class="label-error">Category field cannot be empty</asp:Label>
-                        </div>
+                        </div>-->
 
                         <div class="form-group">
                             <label>Stock:</label>
-                            <asp:TextBox type="number" id="manageInsertStock" class="form-control" runat="server" placeholder="Product Stock" value=""/>
+                            <asp:TextBox type="number" id="manageInsertStock" class="form-control" runat="server" placeholder="Product Stock" value=""/> 
+                            <asp:CompareValidator Display="Dynamic" ID="stockValidator" controlToValidate="manageInsertStock" runat="server" class="label-error" Operator="GreaterThanEqual" ValueToCompare="0" ErrorMessage="Stock field is invalid (Integer greater or equal to zero)"></asp:CompareValidator>
+                            <asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="manageInsertStock" class="label-error" ErrorMessage="Stock field cannot be empty"/>
                         </div>
                         
-                        <!-- Error message for stock -->
+                    
+                        <!-- Error message for stock 
                         <div class="form-group">
                             <asp:Label ID="insertStockError" runat="server" Visible="false" class="label-error">Stock value invalid</asp:Label>
-                        </div>
+                        </div>-->
 
                         <div class="form-group">
                             <label>Description:</label>
@@ -65,24 +53,27 @@
                         <div class="form-group">
                             <label>Price:</label>
                             <asp:TextBox type="number" id="manageInsertPrice" class="form-control" runat="server" placeholder="Product Price" value=""/>
+                            <asp:CompareValidator Display="Dynamic" ID="priceValidator" controlToValidate="manageInsertPrice" runat="server" class="label-error" Operator="GreaterThanEqual" ValueToCompare="0" ErrorMessage="Price field is invalid, value must be greater or equal to zero"></asp:CompareValidator>
+                            <asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="manageInsertPrice" class="label-error" ErrorMessage="Price field cannot be empty"/>
                         </div>
 
-                        <!-- Error message for Price -->
+                        <!-- Error message for Price 
                         <div class="form-group">
                             <asp:Label ID="insertPriceError" runat="server" Visible="false" class="label-error">Price value invalid</asp:Label>
-                        </div>
+                        </div>-->
 
                         <!-- Image Upload -->
                         <div class="form-group">
                                 <label>Image:</label>
                             <!--https://asp.net-tutorials.com/controls/file-upload-control/-->
-                        <asp:FileUpload id="FileUploadImg" runat="server" />
+                        <asp:FileUpload id="FileUploadImg" runat="server" /> <br/>
+                        <asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="FileUploadImg" class="label-error" ErrorMessage="No file selected"/>
                         </div>
 
-                        <!-- Error message for Image Upload where no file exists -->
+                        <!-- Error message for Image Upload where no file exists 
                         <div class="form-group">
                             <asp:Label ID="insertImageError" runat="server" Visible="false" class="label-error">No file has been selected</asp:Label>
-                        </div>
+                        </div>-->
 
                         <!-- Error message for Image Upload where wrong file type is uploaded -->
                         <div class="form-group">
@@ -93,45 +84,35 @@
                         <div class="form-group">
                             <label>Quantity:</label>
                             <asp:TextBox type="number" id="manageInsertQuantity" class="form-control" runat="server" placeholder="Product Quantity" value=""/>
+                            <asp:CompareValidator Display="Dynamic" ID="quantityValidator" controlToValidate="manageInsertQuantity" runat="server" class="label-error" Operator="GreaterThanEqual" ValueToCompare="0" ErrorMessage="Quantity field is invalid, value must be greater or equal to zero"></asp:CompareValidator>
+                            <asp:RequiredFieldValidator display="Dynamic" runat="server" ControlToValidate="manageInsertQuantity" class="label-error" ErrorMessage="Quantity field cannot be empty"/>
                         </div>
                         
-                        <!-- Error message for quantity --> 
+                        <!-- Error message for quantity
                         <div class="form-group">
                             <asp:Label ID="insertQuantityError" runat="server" Visible="false" class="label-error">Invalid value for quantity</asp:Label>
-                        </div>
+                        </div>-->
                         
                         
 
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <div class="col-sm-9 col-sm-offset-3">
                             <span class="help-block">*Required fields</span>
                         </div>
-                    </div>
-                        <asp:RequiredFieldValidator runat="server" ControlToValidate="FileUploadImg" ErrorMessage ="No File, "/>
-                        <asp:RequiredFieldValidator runat="server" controltovalidate="manageInsertName" ErrorMessage="Name, "/> 
-                        <asp:RequiredFieldValidator runat="server" controltovalidate="manageInsertCategory" ErrorMessage="Category, "/> 
-                        <asp:RequiredFieldValidator runat="server" controltovalidate="manageInsertStock" ErrorMessage="Stock, "/> 
-                        <asp:RequiredFieldValidator runat="server" controltovalidate="manageInsertPrice" ErrorMessage="Price, "/> 
-                        <asp:RequiredFieldValidator runat="server" controltovalidate="manageInsertQuantity" ErrorMessage="Quantity"/> <br/>
-                    <div class="form-group">
-                            <asp:Button runat="server" onClick="ManageInsertsCancelBtn_Click" class="btnSubmit" text="Cancel"/>
-                        </div>
+                    </div>-->
+                      <!--  <asp:RequiredFieldValidator runat="server" ControlToValidate="FileUploadImg"/>
+                        <asp:RequiredFieldValidator runat="server" controltovalidate="manageInsertName"/> 
+                        <asp:RequiredFieldValidator runat="server" controltovalidate="manageInsertCategory"/> 
+                        <asp:RequiredFieldValidator runat="server" controltovalidate="manageInsertStock"/>
+                        <asp:RequiredFieldValidator runat="server" controltovalidate="manageInsertPrice"/> 
+                        <asp:RequiredFieldValidator runat="server" controltovalidate="manageInsertQuantity"/> <br/>-->
+                  
                           <div class="form-group">
                             <asp:Button runat="server" class="btnSubmit" text="Submit" OnClick="ManageInsertsSubmitBtn_Click"/>
                         </div>
                 </div>
             </div>
 </div>
-<!--<div id="CreditCardDiv" class="payment-container login-container payment-invisible">
-            <div class="row">
-                <div class="col-md-12 login-form-1">
-                        <div class="form-group">
-                            <label>Card Number:</label>
-                            <asp:TextBox class="form-control" type="number" runat="server" placeholder="Card Number"/>
-                        </div>
-                </div>
-            </div>
-  </div> -->
 
 
 

@@ -30,36 +30,30 @@ namespace BobbleButt
             int InsertQuantity = Convert.ToInt32(manageInsertQuantity.Text);
 
             string InsertImage = "img/" + Convert.ToString(FileUploadImg.FileName);
-            //https://asp.net-tutorials.com/controls/file-upload-control/
-            if (FileUploadImg.HasFile)
-            {
-                insertImageError.Visible = false;
-                if (FileUploadImg.PostedFile.ContentType == "image/jpeg" || FileUploadImg.PostedFile.ContentType == "image/png" || FileUploadImg.PostedFile.ContentType == "image/jpg")
-                    {
+            
 
+
+            if (IsValid)
+            {
+                //https://asp.net-tutorials.com/controls/file-upload-control/
+                if (FileUploadImg.PostedFile.ContentType == "image/jpeg" || FileUploadImg.PostedFile.ContentType == "image/png" || FileUploadImg.PostedFile.ContentType == "image/jpg")
+                {
                     insertImageFileError.Visible = false;
                     //https://www.youtube.com/watch?v=irF6Zomjxwc&feature=youtu.be 4.40
                     FileUploadImg.SaveAs(Server.MapPath("~/img/" + FileUploadImg.FileName));
-
-                        
-
-                    }
-                    else
-                    {
-                    insertImageFileError.Visible = true;
-                    }
-            }
-            else
-                {
-                insertImageError.Visible = true; 
+                    GlobalData.productList.Add(new Product(InsertCategory, InsertName, InsertStock, InsertDescription, InsertPrice, InsertImage, InsertQuantity));
+                    Response.Redirect("ManageItems.aspx");
                 }
-            
-
-            if (IsValid && FileUploadImg.PostedFile.ContentType == "image/jpeg" || FileUploadImg.PostedFile.ContentType == "image/png" || FileUploadImg.PostedFile.ContentType == "image/jpg")
-            {
-                GlobalData.productList.Add(new Product(InsertCategory, InsertName, InsertStock, InsertDescription, InsertPrice, InsertImage, InsertQuantity));
-                Response.Redirect("ManageItems.aspx");
+                else
+                {
+                    insertImageFileError.Visible = true;
+                }
             }
+            /*else
+            {
+
+                ((Label)FindControl("InsertErrorMessage")).Visible = true;
+            }*/
         
         }
         protected void insertUploadBtn_Click(object sender, EventArgs e)

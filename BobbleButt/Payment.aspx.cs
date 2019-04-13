@@ -36,7 +36,18 @@ namespace BobbleButt
             string paypalEmail = ((TextBox)FindControl("paypalEmail")).Text;
             string paypalPword = ((TextBox)FindControl("paypalPassword")).Text;
 
-            
+            /*if (IsValid)
+            {
+                //GO TO OTHER PAGE
+                //Repsonse.Redirect("_________________________");
+            }*/
+
+
+
+
+
+
+
             if (paypalEmail != "")
             {
                 ((Label)FindControl("paypalEmailErrorMessage")).Visible = false;
@@ -61,19 +72,37 @@ namespace BobbleButt
             string creditYear = Request.Form["year"];
             string creditCardNumber = ((TextBox)FindControl("creditCardNumber")).Text;
             string creditCSC = ((TextBox)FindControl("creditCSC")).Text;
-            
+
+            /*if (IsValid)
+            {
+                if (creditMonth == "January" && creditYear == "2019" || creditMonth == "February" && creditYear == "2019" || creditMonth == "March" && creditYear == "2019")
+                {
+
+                    ((Label)FindControl("creditCardDate")).Visible = true;
+
+                    
+                }
+                else
+                {
+                    ((Label)FindControl("creditCardDate")).Visible = false;
+                    //NEED TO FILL THIS OUT SO IF CREDIT CARD VALUES ARE CORRECT IT MOVES TO A CONIFMRATION PAGE
+                    //Response.Redirect("_________________")
+                }
+            }*/
             if (creditMonth == "January" && creditYear == "2019" || creditMonth == "February" && creditYear == "2019" || creditMonth == "March" && creditYear == "2019")
-            { 
-              
+            {
+
                 ((Label)FindControl("creditCardDate")).Visible = true;
+
+
             }
             else
             {
                 ((Label)FindControl("creditCardDate")).Visible = false;
+          
             }
 
 
-            
             //string credit = ((TextBox)FindControl("creditCardNumber")).Text;
             int creditCardNumberLength = creditCardNumber.Length;
             int creditCSCLength = creditCSC.Length;

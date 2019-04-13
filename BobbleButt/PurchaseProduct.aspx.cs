@@ -7,25 +7,28 @@ using System.Web.UI.WebControls;
 
 namespace BobbleButt
 {
-    public partial class Products : System.Web.UI.Page
+    public partial class PurchaseProduct : System.Web.UI.Page
     {
-        protected string mode;
-        protected string product;
+        string product;
         protected void Page_Load(object sender, EventArgs e)
         {
-            mode = Request.QueryString["mode"];
-            product = Request.QueryString["product"];
+            product = Request.QueryString["PassingValue"];
 
-            if (mode != null)
+            productNumber.Text = product;
+
+            productViewName.Text = GlobalData.productList[Convert.ToInt32(product)].Name;
+            productViewPrice.Text = "Price: $"+Convert.ToString(GlobalData.productList[Convert.ToInt32(product)].Price);
+            productViewDescription.Text = GlobalData.productList[Convert.ToInt32(product)].Description;
+            productViewImage.ImageUrl = GlobalData.productList[Convert.ToInt32(product)].Image;
+
+
+        }
+        protected void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            
+            if (product != null)
             {
-                if (mode.Equals("PurchaseProductPage"))
-                {
-                    Response.Redirect("PurchaseProduct.aspx?PassingValue=" + Server.UrlEncode(product));
-                }
-            }
-            if (Request.QueryString["addItem"] != null)
-            {
-                int productIndex = Convert.ToInt32(Request.QueryString["addItem"]);
+                int productIndex = Convert.ToInt32(product);
                 List<Product> cart = new List<Product>();
                 bool isCartNew = false;
                 if (Session["cart"] == null)
@@ -61,9 +64,8 @@ namespace BobbleButt
                     Session["cart"] = cart;
                 }
             }
+            Response.Redirect("PurchaseProduct.aspx?PassingValue=" + product);
 
         }
-
     }
-        
 }
