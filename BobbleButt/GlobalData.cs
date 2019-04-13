@@ -14,6 +14,7 @@ namespace BobbleButt
         { get; set; }
         public static Dictionary<string, User> userMap
         { get; set; }
+        public static List<PostageOptions> postageList { get; set; }
         public static List<Order> Orders { get; set; }
         static GlobalData() { productList = new List<Product>();
             productList.Add(new Product("DC", "Batman Bobbly Head", 10, "Popular male Character from the DC universe who wears a bat costume fighting and solving crime", 30, "img/batman.png", 1));
@@ -27,9 +28,15 @@ namespace BobbleButt
             categoryList.Add("DC");
             categoryList.Add("Marvel");
             Orders = new List<Order>();
-            Orders.Add(new Order("basicuser@bu.com", productList, Convert.ToString(DateTime.Now), "Processing"));
-            Orders.Add(new Order("basicuser@bu.com", productList, Convert.ToString(DateTime.Now), "Sent"));
-            Orders.Add(new Order("basicuser@bu.com", productList, Convert.ToString(DateTime.Now), "Sent"));
+            Orders.Add(new Order("basicuser@bu.com", "kqqqqqqq", "kqqqqqqqqq", "0404040404", "123 fake st", "kqqqqq", "1234", null, "k@k.com",0, productList, "Processing", Convert.ToString(DateTime.Now)));
+
+            Orders.Add(new Order("basicuser@bu.com", "kqqqqqqq", "kqqqqqqqqq", "0404040404", "123 fake st", "kqqqqq", "1234", null, "k@k.com",1, productList, "Processing", Convert.ToString(DateTime.Now)));
+
+            Orders.Add(new Order("basicuser@bu.com", "kqqqqqqq", "kqqqqqqqqq", "0404040404", "123 fake st", "kqqqqq", "1234", null, "k@k.com",2, productList, "Processing", Convert.ToString(DateTime.Now)));
+            postageList = new List<PostageOptions>();
+            postageList.Add(new PostageOptions("Regular", 5));
+            postageList.Add(new PostageOptions("Registered", 10));
+            postageList.Add(new PostageOptions("Express", 15));
 
         }
     }

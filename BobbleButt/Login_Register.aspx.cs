@@ -21,7 +21,7 @@ namespace BobbleButt
      
             if (GlobalData.userMap.ContainsKey(email))
             {
-                if(GlobalData.userMap[email].Password.Equals(pword))
+                if(GlobalData.userMap[email].Password.Equals(pword)&&!GlobalData.userMap[email].IsSuspended)
                 {
                     Session.Add("user", GlobalData.userMap[email]);
                     Response.Redirect("Main.aspx");

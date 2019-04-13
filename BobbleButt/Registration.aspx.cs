@@ -13,16 +13,17 @@ namespace BobbleButt
         User user;
         protected void Page_Load(object sender, EventArgs e)
         {
-            valBirthDate.ValueToCompare = DateTime.Now.ToShortDateString();
-            if(Session["tempUser"]==null)
+
+            if (Session["tempUser"]==null)
             {
-                Response.Redirect("Login_Register.aspx");
+                //Response.Redirect("Login_Register.aspx");
             }
             
 
         }
         protected void btnRegister_Click(object sender, System.EventArgs e)
         {
+
             if (IsValid)
             {
 
@@ -40,10 +41,7 @@ namespace BobbleButt
                 Response.Redirect("Main.aspx");
                 
             }
-            else
-            {
-                ((Label)FindControl("errorMessage")).Visible = true;
-            }
+
         }
     }
 }

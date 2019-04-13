@@ -116,6 +116,7 @@
     <Content Include="About.aspx" />
     <Content Include="Admin_Users.aspx" />
     <Content Include="Checkout.aspx" />
+    <Content Include="Checkout_Confirm.aspx" />
     <Content Include="Checkout_Info.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -144,6 +145,7 @@
     <Content Include="img\mainBackground.png" />
     <Content Include="img\marvelCategory.png" />
     <Content Include="img\phoneSymbol.png" />
+    <Content Include="img\tick.png" />
     <Content Include="img\user.png" />
     <Content Include="img\user_hover.png" />
     <Content Include="Orders.aspx" />
@@ -267,6 +269,13 @@
     <Compile Include="Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Checkout_Confirm.aspx.cs">
+      <DependentUpon>Checkout_Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout_Confirm.aspx.designer.cs">
+      <DependentUpon>Checkout_Confirm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Checkout_Info.aspx.cs">
       <DependentUpon>Checkout_Info.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -304,6 +313,7 @@
     <Compile Include="Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PostageOptions.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

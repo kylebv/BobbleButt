@@ -30,21 +30,24 @@
                         </div>
                     
                         <div class="form-group">
-                            <asp:Button onclick="btnLogin_Click"  runat="server" class="btnSubmit" text="Login" />
+                            <asp:Button onclick="btnLogin_Click" causesvalidation="false" runat="server" class="btnSubmit" text="Login" />
                         </div>
                         
                         <div class="form-group">
-                            <asp:Label ID="errorMessage" runat="server" Visible="false" class="label-error">Login details do not match any in our system.</asp:Label>
+                            <asp:Label ID="errorMessage" runat="server" Visible="false" class="label-error">Login failed. You may be suspended, or your details are incorrect.</asp:Label>
                         </div>
                 </div>
                 <div class="col-md-6 login-form-2">
                     <h3>Register</h3>
                         <div class="form-group">
                             <asp:TextBox runat="server" TextMode="Email" id="regEmail1" class="form-control" placeholder="Your Email *" value="" />
+                                                        <asp:RequiredFieldValidator Enabled="false" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter an email" runat="server" controltovalidate="regEmail1"/>
                         </div>
                                         
                     <div class="form-group">
                             <asp:TextBox runat="server" TextMode="Email" id="regEmail2" class="form-control" placeholder="Re-enter Email *" value="" />
+                                                                                <asp:RequiredFieldValidator Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter an email" runat="server" controltovalidate="regEmail2"/>
+
                         <asp:RegularExpressionValidator Display="Dynamic" ID="regexEmailValid" CssClass="label-error" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="regEmail1" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
 <br />
                     <asp:CompareValidator 
@@ -57,10 +60,14 @@
 
                         <div class="form-group">
                             <asp:TextBox TextMode="Password" runat="server" id="regPassword1" class="form-control" placeholder="Your Password *" value="" />
+                                                        <asp:RequiredFieldValidator Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a password" runat="server" controltovalidate="regPassword1"/>
+
                         </div>
                     
                     <div class="form-group">
                             <asp:TextBox  TextMode="Password" runat="server" id="regPassword2" class="form-control" placeholder="Re-enter Password *" value="" />
+                            <asp:RequiredFieldValidator Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a password" runat="server" controltovalidate="regPassword2"/>
+
                         <asp:RegularExpressionValidator Display="Dynamic" ID="checkLength" CssClass="label-error" runat="server"
                            ControlToValidate="regPassword1"
                            ErrorMessage="Minimum password length is 8"
@@ -83,6 +90,7 @@
                             <asp:Label ID="errorMessage2" runat="server" Visible="false" class="label-error">Email already exists in our system.</asp:Label>
                         </div>
                     
+        <asp:RequiredFieldValidator runat="server" controltovalidate="regEmail1"/>
                         </div>
                 </div>
             </div>

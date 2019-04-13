@@ -17,7 +17,7 @@ namespace BobbleButt
             mode = Request.QueryString["mode"];
             order = Request.QueryString["order"];
             user = Request.QueryString["user"];
-            if (mode != null && order != null)
+                if (mode != null && order != null)
             {
                 if (mode.Equals("toggleSent"))
                 {

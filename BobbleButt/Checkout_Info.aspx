@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Checkout_Info.aspx.cs" Inherits="BobbleButt.Checkout_Info" %>
-
+<%@ Import Namespace="BobbleButt" %>
 <!DOCTYPE html>
 
 
@@ -17,220 +17,171 @@
     </head>
 <body class="blue">
     <form id="form1" runat="server">
-         <body class="bg-light">
 
     <div class="container login-form-1">
       <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Your cart</span>
-            <span class="badge badge-secondary badge-pill">3</span>
+              <%int cartCount = 0; foreach(Product p in cart)
+                  { cartCount += p.Quantity; } %>
+            <span class="badge badge-secondary badge-pill"><%=cartCount %></span>
           </h4>
           <ul class="list-group mb-3">
+              <%double total = 0;
+                  foreach (Product p in cart)
+                  {
+                      total += p.Quantity * p.Price;%>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-muted">Brief description</small>
+                <h6 class="my-0"><%=p.Name %></h6>
+                <small class="text-muted">Quantity: <%= p.Quantity %></small>
               </div>
-              <span class="text-muted">$12</span>
+              <span class="text-muted">$<%=(p.Quantity*p.Price).ToString("F") %></span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Third item</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between bg-light">
-              <div class="text-success">
-                <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
-              </div>
-              <span class="text-success">-$5</span>
-            </li>
+              <%} %>
+            
             <li class="list-group-item d-flex justify-content-between">
-              <span>Total (USD)</span>
-              <strong>$20</strong>
+              <span>Total (AUD)</span>
+              <strong>$<%=total.ToString("F") %></strong>
             </li>
           </ul>
+            <asp:DropDownList AutoPostBack="true" ID="DdlPostage" OnSelectedIndexChanged="ddlPostage_Changed" runat="server"/>
+            <span id="postPrice" runat="server"></span>
 
-          <form class="card p-2">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Promo code">
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-secondary">Redeem</button>
-              </div>
-            </div>
-          </form>
+          
         </div>
         <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Billing address</h4>
-          <form class="needs-validation" novalidate>
+          <h4 class="mb-3">Shipping address</h4>
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
+                <asp:TextBox runat="server"  id="firstName" class="form-control" placeholder="First name *"/>
+                  <asp:RequiredFieldValidator ID="valFirstName" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a first name" runat="server" controltovalidate="firstName"/>
+                
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Valid last name is required.
-                </div>
+                <asp:TextBox runat="server" class="form-control" id="lastName" placeholder="Last name *"/>
+                  <asp:RequiredFieldValidator ID="valLastName" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a last name" runat="server" controltovalidate="lastName"/>
+                
               </div>
             </div>
 
+
+
             <div class="mb-3">
-              <label for="username">Username</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">@</span>
-                </div>
-                <input type="text" class="form-control" id="username" placeholder="Username" required>
-                <div class="invalid-feedback" style="width: 100%;">
-                  Your username is required.
-                </div>
-              </div>
+              <label for="email">Email</label>
+              <asp:TextBox runat="server" TextMode="Email" class="form-control" id="email" placeholder="you@example.com *"/>
+                <asp:RequiredFieldValidator ID="valEmail" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter an email address" runat="server" controltovalidate="email"/>
+                                        <asp:RegularExpressionValidator Display="Dynamic" ID="regexEmail" CssClass="label-error" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="email" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
+
+            </div>
+            <div class="mb-3">
+              <label for="phone">Phone number</label>
+              <asp:TextBox runat="server" TextMode="Number" MaxLength="10" class="form-control" id="phone" placeholder="0412345678 *"/>
+                <asp:RequiredFieldValidator ID="valPhone" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a phone number" runat="server" controltovalidate="phone"/>
+                                <asp:RegularExpressionValidator Display="Dynamic" ID="regexPhone" CssClass="label-error" runat="server" ValidationExpression="^[0-9]{10}$" ControlToValidate="phone" ErrorMessage="Invalid Phone Number"></asp:RegularExpressionValidator>
+
+              
             </div>
 
             <div class="mb-3">
-              <label for="email">Email <span class="text-muted">(Optional)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
-              <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
-              </div>
+              <label for="address">Street address</label>
+              <asp:TextBox runat="server" class="form-control" id="streetAddress" placeholder="1234 Main St *" />
+                <asp:RequiredFieldValidator ID="valStreetAddress" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a street address" runat="server" controltovalidate="streetAddress"/>
+              
             </div>
 
             <div class="mb-3">
-              <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
-            </div>
 
-            <div class="mb-3">
-              <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
             </div>
 
             <div class="row">
+              <div class="col-md-7 mb-3">
+                              <label for="suburb">Suburb</label>
+              <asp:TextBox runat="server" class="form-control" id="suburb" placeholder="Suburb *"/>
+                  <asp:RequiredFieldValidator ID="valSuburb" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a suburb" runat="server" controltovalidate="suburb"/>
+              </div>
               <div class="col-md-5 mb-3">
-                <label for="country">Country</label>
-                <select class="custom-select d-block w-100" id="country" required>
-                  <option value="">Choose...</option>
-                  <option>United States</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a valid country.
-                </div>
+                <label for="postcode">Postcode</label>
+              <asp:TextBox runat="server" TextMode="Number" MaxLength="4" class="form-control" id="postcode" placeholder="1234 *"/>
+                  <asp:RequiredFieldValidator ID="valPostcode" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a postcode" runat="server" controltovalidate="postcode"/>
+                                  <asp:RegularExpressionValidator Display="Dynamic" ID="regexPoscode" CssClass="label-error" runat="server" ValidationExpression="^(0[289][0-9]{2})|([1345689][0-9]{3})|(2[0-8][0-9]{2})|(290[0-9])|(291[0-4])|(7[0-4][0-9]{2})|(7[8-9][0-9]{2})$" ControlToValidate="postcode" ErrorMessage="Invalid Postcode"></asp:RegularExpressionValidator>
+
               </div>
-              <div class="col-md-4 mb-3">
-                <label for="state">State</label>
-                <select class="custom-select d-block w-100" id="state" required>
-                  <option value="">Choose...</option>
-                  <option>California</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please provide a valid state.
-                </div>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="zip">Zip</label>
-                <input type="text" class="form-control" id="zip" placeholder="" required>
-                <div class="invalid-feedback">
-                  Zip code required.
-                </div>
-              </div>
+              
             </div>
-            <hr class="mb-4">
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="same-address">
-              <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="save-info">
-              <label class="custom-control-label" for="save-info">Save this information for next time</label>
-            </div>
-            <hr class="mb-4">
+            
+            <hr class="mb-4"/>
 
             <h4 class="mb-3">Payment</h4>
 
             <div class="d-block my-3">
-              <div class="custom-control custom-radio">
-                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                <label class="custom-control-label" for="credit">Credit card</label>
+              <div class="">
+                <asp:radiobutton GroupName="gp" OnCheckedChanged="chk_Changed" autopostback="true" runat="server" id="credit" class="" checked="true"/>
+                <label class="" for="credit">Credit card</label>
               </div>
-              <div class="custom-control custom-radio">
-                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="debit">Debit card</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="paypal">Paypal</label>
+              <div class="">
+                <asp:radiobutton GroupName="gp" AutoPostBack="true" OnCheckedChanged="chk_Changed" runat="server" id="paypal" class="" />
+                <label class="" for="paypal">Paypal</label>
               </div>
             </div>
+           
+             <div id="cardForm" runat="server">
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="cc-name">Name on card</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                <label for="card_name">Name on card</label>
+                <asp:TextBox runat="server" class="form-control" id="card_name" placeholder="" />
                 <small class="text-muted">Full name as displayed on card</small>
-                <div class="invalid-feedback">
-                  Name on card is required
-                </div>
+                  <asp:RequiredFieldValidator ID="valCardName" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a card name" runat="server" controltovalidate="card_name"/>
               </div>
               <div class="col-md-6 mb-3">
-                <label for="cc-number">Credit card number</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                <div class="invalid-feedback">
-                  Credit card number is required
-                </div>
+                <label for="card_number">Credit card number</label>
+                <asp:TextBox runat="server" MaxLength="16" class="form-control" id="card_number" placeholder="" />
+                  <asp:RequiredFieldValidator ID="valCardNumber" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a card #" runat="server" controltovalidate="card_number"/>
+                                  <asp:RegularExpressionValidator Display="Dynamic" ID="regexCardNumber" CssClass="label-error" runat="server" ValidationExpression="^[0-9]{16}$" ControlToValidate="card_number" ErrorMessage="Invalid Card Number"></asp:RegularExpressionValidator>
+
               </div>
             </div>
             <div class="row">
               <div class="col-md-3 mb-3">
-                <label for="cc-expiration">Expiration</label>
-                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-                <div class="invalid-feedback">
-                  Expiration date required
-                </div>
+                <label for="card_expiration">Expiration</label>
+                <asp:TextBox runat="server" MaxLength="5" class="form-control" id="card_expiration" placeholder="" />
+                  <asp:RequiredFieldValidator ID="valCardExpiration" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter an expiration date" runat="server" controltovalidate="card_expiration"/>
+                                                    <asp:RegularExpressionValidator Display="Dynamic" ID="regexCardExpiration" CssClass="label-error" runat="server" ValidationExpression="^((0[1-9])|(1[0-2]))\/(\d{2})$" ControlToValidate="card_expiration" ErrorMessage="Invalid Date Format (mm/yy)"></asp:RegularExpressionValidator>
+
+
               </div>
               <div class="col-md-3 mb-3">
-                <label for="cc-expiration">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-                <div class="invalid-feedback">
-                  Security code required
-                </div>
+                <label for="card_expiration">CVV</label>
+                <asp:TextBox runat="server" class="form-control" MaxLength="3" id="card_cvv" placeholder="" />
+                  <asp:RequiredFieldValidator ID="valCardCvv" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a CVV #" runat="server" controltovalidate="card_cvv"/>
+                                  <asp:RegularExpressionValidator Display="Dynamic" ID="regexCardCvv" CssClass="label-error" runat="server" ValidationExpression="^[0-9]{3}$" ControlToValidate="card_cvv" ErrorMessage="Invalid Cvv"></asp:RegularExpressionValidator>
+
+
               </div>
             </div>
-            <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
-          </form>
+                </div>
+            <div id="paypalForm" runat="server">
+            <div class="mb-3">
+              <label for="payPalEmail">Email</label>
+              <asp:TextBox runat="server" TextMode="Email" class="form-control" id="payPalEmail" placeholder="you@example.com *"/>
+                <asp:RequiredFieldValidator ID="valPayPalEmail" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter an email address" runat="server" controltovalidate="payPalEmail"/>
+                                        <asp:RegularExpressionValidator Display="Dynamic" ID="regexPayPalEmail" CssClass="label-error" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="payPalEmail" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
+
+              
+            </div>
+                 <div class="mb-3">
+              <label for="payPalPassword">Password</label>
+              <asp:TextBox runat="server" TextMode="Password" class="form-control" id="payPalPassword" placeholder="*******"/>
+                     <asp:RequiredFieldValidator ID="valPayPalPassword" Display="Dynamic" CssClass="label-error" ErrorMessage="Please enter a password" runat="server" controltovalidate="payPalPassword"/>
+                     </div>
+                </div>
+            <hr class="mb-4"/>
+            <asp:Button runat="server" OnClick="btnCheckout_Clicked" class="btn btn-success btn-lg btn-block" text="Continue to checkout"/>
         </div>
-      </div>
-
-      <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2017-2018 Company Name</p>
-        <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">Privacy</a></li>
-          <li class="list-inline-item"><a href="#">Terms</a></li>
-          <li class="list-inline-item"><a href="#">Support</a></li>
-        </ul>
-      </footer>
     </div>
-
-
-  </body>
         </form>
     </body>
 </html>
